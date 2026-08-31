@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#555"/></marker></defs>
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="60" y="58" font-size="30" font-weight="700" font-family="Arial, Noto Sans JP, sans-serif" fill="#111">Access認証フロー</text>
+<text x="60" y="91" font-size="16" font-family="Arial, Noto Sans JP, sans-serif" fill="#555">Originへ到達する前にIdP認証とPolicy評価を完了する</text>
+<line x1="230" y1="265.0" x2="310" y2="265.0" stroke="#555" stroke-width="2" marker-end="url(#a)"/>
+<line x1="530" y1="265.0" x2="630" y2="180.0" stroke="#555" stroke-width="2" marker-end="url(#a)"/>
+<line x1="740.0" y1="245" x2="740.0" y2="310" stroke="#555" stroke-width="2" marker-end="url(#a)"/>
+<line x1="850" y1="375.0" x2="960" y2="265.0" stroke="#555" stroke-width="2" marker-end="url(#a)"/>
+<rect x="60" y="205" width="170" height="120" rx="18" fill="#F3F0FF" stroke="#7755BB" stroke-width="2"/>
+<text x="78" y="238" font-size="18" font-weight="700" font-family="Arial, Noto Sans JP, sans-serif" fill="#111">User</text>
+<text x="78" y="264" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Open admin URL</text>
+<rect x="310" y="175" width="220" height="180" rx="18" fill="#FFF0F0" stroke="#D64545" stroke-width="2"/>
+<text x="328" y="208" font-size="18" font-weight="700" font-family="Arial, Noto Sans JP, sans-serif" fill="#111">Access</text>
+<text x="328" y="234" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">No valid session</text>
+<text x="328" y="256" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Redirect to IdP</text>
+<rect x="630" y="115" width="220" height="130" rx="18" fill="#EFF8F8" stroke="#3C8585" stroke-width="2"/>
+<text x="648" y="148" font-size="18" font-weight="700" font-family="Arial, Noto Sans JP, sans-serif" fill="#111">IdP</text>
+<text x="648" y="174" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Login / MFA</text>
+<text x="648" y="196" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Return identity</text>
+<rect x="630" y="310" width="220" height="130" rx="18" fill="#FFF0F0" stroke="#D64545" stroke-width="2"/>
+<text x="648" y="343" font-size="18" font-weight="700" font-family="Arial, Noto Sans JP, sans-serif" fill="#111">Policy</text>
+<text x="648" y="369" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Include / Require</text>
+<text x="648" y="391" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Device posture</text>
+<rect x="960" y="205" width="170" height="120" rx="18" fill="#F5F5F5" stroke="#666" stroke-width="2"/>
+<text x="978" y="238" font-size="18" font-weight="700" font-family="Arial, Noto Sans JP, sans-serif" fill="#111">Private App</text>
+<text x="978" y="264" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Allowed only</text>
+<rect x="60" y="532" width="1080" height="48" rx="12" fill="#F7F7F7"/>
+<text x="80" y="561" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#333">認証成功だけでAllowにせず、グループ・メールドメイン・端末条件などRequire条件を明示する。</text>
+</svg>

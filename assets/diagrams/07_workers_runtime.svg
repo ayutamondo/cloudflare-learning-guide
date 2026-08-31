@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#555"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="60" y="58" font-size="30" font-weight="700" font-family="Arial, Noto Sans JP, sans-serif" fill="#111">Workers Runtime</text>
+<text x="60" y="91" font-size="16" font-family="Arial, Noto Sans JP, sans-serif" fill="#555">Isolateでコードを実行し、Bindings経由でCloudflareサービスへ接続する</text>
+<line x1="230" y1="270.0" x2="320" y2="270.0" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="620" y1="270.0" x2="760" y2="180.0" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="632.0" y="201.0" width="116" height="22" rx="11" fill="#fff" opacity="0.95"/>
+<text x="690.0" y="217.0" text-anchor="middle" font-size="13" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">binding</text>
+<line x1="620" y1="270.0" x2="760" y2="380.0" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="632.0" y="301.0" width="116" height="22" rx="11" fill="#fff" opacity="0.95"/>
+<text x="690.0" y="317.0" text-anchor="middle" font-size="13" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">fetch</text>
+<rect x="60" y="210" width="170" height="120" rx="18" fill="#F3F0FF" stroke="#7755BB" stroke-width="2"/>
+<text x="80" y="244" font-size="19" font-weight="700" font-family="Arial, Noto Sans JP, sans-serif" fill="#111">Request</text>
+<text x="80" y="271" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">fetch()</text>
+<rect x="320" y="135" width="300" height="270" rx="18" fill="#EEF5FF" stroke="#3B6FD8" stroke-width="2"/>
+<text x="340" y="169" font-size="19" font-weight="700" font-family="Arial, Noto Sans JP, sans-serif" fill="#111">Worker Isolate</text>
+<text x="340" y="196" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">fetch handler</text>
+<text x="340" y="218" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Web Standards APIs</text>
+<text x="340" y="240" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">env bindings</text>
+<text x="340" y="262" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">ctx.waitUntil()</text>
+<rect x="760" y="105" width="240" height="150" rx="18" fill="#F1F8EF" stroke="#4D8B31" stroke-width="2"/>
+<text x="780" y="139" font-size="19" font-weight="700" font-family="Arial, Noto Sans JP, sans-serif" fill="#111">Bindings</text>
+<text x="780" y="166" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">KV / D1 / R2</text>
+<text x="780" y="188" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">DO / Queue</text>
+<rect x="760" y="310" width="240" height="140" rx="18" fill="#F5F5F5" stroke="#666666" stroke-width="2"/>
+<text x="780" y="344" font-size="19" font-weight="700" font-family="Arial, Noto Sans JP, sans-serif" fill="#111">External / Origin</text>
+<text x="780" y="371" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">fetch(origin)</text>
+<text x="780" y="393" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Third-party API</text>
+<rect x="60" y="534" width="1080" height="48" rx="12" fill="#F7F7F7"/>
+<text x="80" y="563" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#333">Workersは「常駐サーバー」ではない。状態は外部データサービスへ置き、リクエスト単位で処理するのが基本。</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#555"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="60" y="58" font-size="30" font-weight="700" font-family="Arial, Noto Sans JP, sans-serif" fill="#111">Cloudflare全体アーキテクチャ</text>
+<text x="60" y="91" font-size="16" font-family="Arial, Noto Sans JP, sans-serif" fill="#555">Proxied DNSを境に、CloudflareがReverse Proxyとして通信経路へ入る</text>
+<line x1="230" y1="275.0" x2="300" y2="275.0" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="207.0" y="251.0" width="116" height="22" rx="11" fill="#fff" opacity="0.95"/>
+<text x="265.0" y="267.0" text-anchor="middle" font-size="13" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">1. HTTPS</text>
+<line x1="550" y1="275.0" x2="650" y2="270.0" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="542.0" y="248.5" width="116" height="22" rx="11" fill="#fff" opacity="0.95"/>
+<text x="600.0" y="264.5" text-anchor="middle" font-size="13" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">2. Origin request</text>
+<line x1="550" y1="275.0" x2="950" y2="270.0" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="692.0" y="248.5" width="116" height="22" rx="11" fill="#fff" opacity="0.95"/>
+<text x="750.0" y="264.5" text-anchor="middle" font-size="13" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Binding</text>
+<rect x="60" y="220" width="170" height="110" rx="18" fill="#F3F0FF" stroke="#7755BB" stroke-width="2"/>
+<text x="80" y="254" font-size="19" font-weight="700" font-family="Arial, Noto Sans JP, sans-serif" fill="#111">User</text>
+<text x="80" y="281" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Browser / API</text>
+<rect x="300" y="145" width="250" height="260" rx="18" fill="#FFF4E8" stroke="#F48120" stroke-width="2"/>
+<text x="320" y="179" font-size="19" font-weight="700" font-family="Arial, Noto Sans JP, sans-serif" fill="#111">Cloudflare Edge</text>
+<text x="320" y="206" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Anycast</text>
+<text x="320" y="228" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">TLS termination</text>
+<text x="320" y="250" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Rules / WAF</text>
+<text x="320" y="272" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Cache / Workers</text>
+<rect x="650" y="190" width="220" height="160" rx="18" fill="#F5F5F5" stroke="#666666" stroke-width="2"/>
+<text x="670" y="224" font-size="19" font-weight="700" font-family="Arial, Noto Sans JP, sans-serif" fill="#111">Origin</text>
+<text x="670" y="251" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Web server</text>
+<text x="670" y="273" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">App server</text>
+<text x="670" y="295" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Database behind app</text>
+<rect x="950" y="190" width="190" height="160" rx="18" fill="#F1F8EF" stroke="#4D8B31" stroke-width="2"/>
+<text x="970" y="224" font-size="19" font-weight="700" font-family="Arial, Noto Sans JP, sans-serif" fill="#111">CF Data</text>
+<text x="970" y="251" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">R2 / KV</text>
+<text x="970" y="273" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">D1 / DO</text>
+<rect x="60" y="534" width="1080" height="48" rx="12" fill="#F7F7F7"/>
+<text x="80" y="563" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#333">DNS onlyではEdgeを経由しない。CloudflareのWAF・Cache・Workers等を効かせるにはProxiedが基本。</text>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#555"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="60" y="58" font-size="30" font-weight="700" font-family="Arial, Noto Sans JP, sans-serif" fill="#111">Cloudflareで1リクエストはどう処理されるか</text>
+<text x="60" y="91" font-size="16" font-family="Arial, Noto Sans JP, sans-serif" fill="#555">製品名ではなく「通信経路のどの層で問題を解くか」で覚える</text>
+<line x1="210" y1="262.5" x2="250" y2="262.5" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="172.0" y="238.5" width="116" height="22" rx="11" fill="#fff" opacity="0.95"/>
+<text x="230.0" y="254.5" text-anchor="middle" font-size="13" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">名前解決</text>
+<line x1="400" y1="262.5" x2="440" y2="227.5" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="362.0" y="221.0" width="116" height="22" rx="11" fill="#fff" opacity="0.95"/>
+<text x="420.0" y="237.0" text-anchor="middle" font-size="13" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">HTTPS</text>
+<line x1="630" y1="227.5" x2="670" y2="227.5" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="860" y1="227.5" x2="900" y2="190.0" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="822.0" y="184.75" width="116" height="22" rx="11" fill="#fff" opacity="0.95"/>
+<text x="880.0" y="200.75" text-anchor="middle" font-size="13" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Binding</text>
+<line x1="860" y1="227.5" x2="900" y2="380.0" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="822.0" y="279.75" width="116" height="22" rx="11" fill="#fff" opacity="0.95"/>
+<text x="880.0" y="295.75" text-anchor="middle" font-size="13" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Miss / Proxy</text>
+<rect x="60" y="210" width="150" height="105" rx="18" fill="#F3F0FF" stroke="#7755BB" stroke-width="2"/>
+<text x="80" y="244" font-size="19" font-weight="700" font-family="Arial, Noto Sans JP, sans-serif" fill="#111">Client</text>
+<text x="80" y="271" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Browser</text>
+<text x="80" y="293" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Mobile / API</text>
+<rect x="250" y="210" width="150" height="105" rx="18" fill="#FFF4E8" stroke="#F48120" stroke-width="2"/>
+<text x="270" y="244" font-size="19" font-weight="700" font-family="Arial, Noto Sans JP, sans-serif" fill="#111">DNS</text>
+<text x="270" y="271" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Authoritative DNS</text>
+<text x="270" y="293" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Anycast</text>
+<rect x="440" y="150" width="190" height="155" rx="18" fill="#FFF0F0" stroke="#D64545" stroke-width="2"/>
+<text x="460" y="184" font-size="19" font-weight="700" font-family="Arial, Noto Sans JP, sans-serif" fill="#111">Edge Security</text>
+<text x="460" y="211" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">TLS termination</text>
+<text x="460" y="233" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">WAF / DDoS</text>
+<text x="460" y="255" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Bot / Rate Limit</text>
+<rect x="670" y="150" width="190" height="155" rx="18" fill="#EEF5FF" stroke="#3B6FD8" stroke-width="2"/>
+<text x="690" y="184" font-size="19" font-weight="700" font-family="Arial, Noto Sans JP, sans-serif" fill="#111">Edge Logic</text>
+<text x="690" y="211" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Ruleset Engine</text>
+<text x="690" y="233" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Cache</text>
+<text x="690" y="255" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Workers</text>
+<rect x="900" y="120" width="210" height="140" rx="18" fill="#F1F8EF" stroke="#4D8B31" stroke-width="2"/>
+<text x="920" y="154" font-size="19" font-weight="700" font-family="Arial, Noto Sans JP, sans-serif" fill="#111">Cloudflare Data</text>
+<text x="920" y="181" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">KV / D1 / R2</text>
+<text x="920" y="203" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">DO / Queues</text>
+<rect x="900" y="315" width="210" height="130" rx="18" fill="#F5F5F5" stroke="#666666" stroke-width="2"/>
+<text x="920" y="349" font-size="19" font-weight="700" font-family="Arial, Noto Sans JP, sans-serif" fill="#111">Origin</text>
+<text x="920" y="376" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Web / API</text>
+<text x="920" y="398" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Tunnel / LB</text>
+<rect x="60" y="534" width="1080" height="48" rx="12" fill="#F7F7F7"/>
+<text x="80" y="563" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#333">設計判断の基本: Security / Cache / Compute / Origin のどこで処理するのが最も単純で安全かを選ぶ。</text>
+</svg>

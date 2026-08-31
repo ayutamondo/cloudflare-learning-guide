@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#555"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="60" y="58" font-size="30" font-weight="700" font-family="Arial, Noto Sans JP, sans-serif" fill="#111">DNS・TLS・Origin保護</text>
+<text x="60" y="91" font-size="16" font-family="Arial, Noto Sans JP, sans-serif" fill="#555">TLSは Client↔Cloudflare と Cloudflare↔Origin の2区間で考える</text>
+<line x1="240" y1="270.0" x2="340" y2="270.0" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="232.0" y="246.0" width="116" height="22" rx="11" fill="#fff" opacity="0.95"/>
+<text x="290.0" y="262.0" text-anchor="middle" font-size="13" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">TLS #1</text>
+<line x1="580" y1="270.0" x2="720" y2="270.0" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="592.0" y="246.0" width="116" height="22" rx="11" fill="#fff" opacity="0.95"/>
+<text x="650.0" y="262.0" text-anchor="middle" font-size="13" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">TLS #2</text>
+<rect x="60" y="210" width="180" height="120" rx="18" fill="#F3F0FF" stroke="#7755BB" stroke-width="2"/>
+<text x="80" y="244" font-size="19" font-weight="700" font-family="Arial, Noto Sans JP, sans-serif" fill="#111">Client</text>
+<text x="80" y="271" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">HTTPS request</text>
+<rect x="340" y="170" width="240" height="200" rx="18" fill="#FFF4E8" stroke="#F48120" stroke-width="2"/>
+<text x="360" y="204" font-size="19" font-weight="700" font-family="Arial, Noto Sans JP, sans-serif" fill="#111">Cloudflare</text>
+<text x="360" y="231" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Universal SSL</text>
+<text x="360" y="253" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Edge certificate</text>
+<text x="360" y="275" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Full (strict)</text>
+<rect x="720" y="170" width="260" height="200" rx="18" fill="#F5F5F5" stroke="#666666" stroke-width="2"/>
+<text x="740" y="204" font-size="19" font-weight="700" font-family="Arial, Noto Sans JP, sans-serif" fill="#111">Origin</text>
+<text x="740" y="231" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Origin certificate</text>
+<text x="740" y="253" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">or Public CA</text>
+<text x="740" y="275" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#444">Firewall / AOP / Tunnel</text>
+<rect x="60" y="534" width="1080" height="48" rx="12" fill="#F7F7F7"/>
+<text x="80" y="563" font-size="14" font-family="Arial, Noto Sans JP, sans-serif" fill="#333">推奨: Full (strict) + Origin直アクセスを閉じる。FlexibleはCloudflare→OriginがHTTPとなるため本番設計では避ける。</text>
+</svg>
