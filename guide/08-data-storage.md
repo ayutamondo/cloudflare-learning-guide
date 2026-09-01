@@ -15,9 +15,6 @@ Cloudflare Developer Platformでは「DBはD1」と決め打ちしない。
 ## 2. まず選択表
 
 <!-- visual:start -->
-![Cloudflare Data製品の位置づけ](assets/diagrams/08_data_selection.svg)
-
-> **図の要点:** KV・D1・Durable Objects・R2・Queues・Hyperdriveは競合製品ではなく、異なるアクセスパターンを担当する。
 <!-- visual:end -->
 
 | 製品 | データ型 | 整合性/特徴 | 得意 |
@@ -323,9 +320,7 @@ Hyperdrive read query cacheはwrite時に自動invalidateされない。read-aft
 ## 12. 選定フロー
 
 <!-- visual:start -->
-![Data製品の選定フロー](assets/diagrams/08_data_decision_flow.svg)
-
-> **図の要点:** データ形式だけでなく、読み書き頻度・整合性・同期/非同期・既存DB接続の有無から選ぶ。
+{% include archify-diagram.html src="/assets/diagrams/08_data_decision_flow.html" title="Data製品の選定フロー" summary="データ形式だけでなく、読み書き頻度・整合性・同期/非同期・既存DB接続の有無から選ぶ。" %}
 <!-- visual:end -->
 
 ```text

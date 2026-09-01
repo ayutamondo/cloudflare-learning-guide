@@ -23,9 +23,7 @@ Cloudflareを専門的に扱うには「設定できる」だけでは足りな�
 ## 2. Observabilityの3層
 
 <!-- visual:start -->
-![ClientからOriginまでの観測ポイント](assets/diagrams/11_observability.svg)
-
-> **図の要点:** CF-Rayなどの相関情報を使い、Client・Edge・Worker・Originのどのレイヤーで遅延/エラーが起きたかを追える状態を作る。
+{% include archify-diagram.html src="/assets/diagrams/11_observability.html" title="ClientからOriginまでの観測ポイント" summary="CF-Rayなどの相関情報を使い、Client・Edge・Worker・Originのどのレイヤーで遅延やエラーが起きたかを追える状態を作る。" %}
 <!-- visual:end -->
 
 ```text
@@ -356,9 +354,7 @@ Metricsは目的に対する指標として解釈する。
 # ハンズオン11: Debug Runbookを作る
 
 <!-- visual:start -->
-![障害調査Runbook](assets/diagrams/11_debug_runbook.svg)
-
-> **図の要点:** Client側の事実から始め、Headers → Edge → Worker → Originの順で切り分けると無駄な設定変更を減らせる。
+{% include archify-diagram.html src="/assets/diagrams/11_debug_runbook.html" title="障害調査Runbook" summary="Client側の事実から始め、Headers → Edge → Worker → Originの順で切り分けると無駄な設定変更を減らせる。" %}
 <!-- visual:end -->
 
 ## 症状

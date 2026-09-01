@@ -28,39 +28,15 @@ Observability        logs/traces
 ## 2. Architecture
 
 <!-- visual:start -->
-![総合ハンズオンの完成アーキテクチャ](assets/diagrams/13_reference_architecture.svg)
-
-> **図の要点:** DNS/TLS、WAF/Cache、Workers、D1/R2/Queueまでを1つの小規模Webサービスとして接続する。
+{% include archify-diagram.html src="/assets/diagrams/13_reference_architecture.html" title="総合ハンズオンの完成アーキテクチャ" summary="DNS/TLS、WAF/Cache、Workers、D1/R2/Queueまでを1つの小規模Webサービスとして接続する。" %}
 <!-- visual:end -->
-
-```mermaid
-flowchart TB
-  U[Public User] --> CF[Cloudflare Edge]
-  A[Admin User] --> CF
-
-  CF --> WAF[WAF / Rate Limit]
-  CF --> ACCESS[Access for admin]
-
-  WAF --> APP[Workers + Static Assets]
-  ACCESS --> ADMIN[Admin Worker/App]
-
-  APP --> D1[D1]
-  APP --> R2[R2]
-  APP --> Q[Queues]
-  Q --> EXT[External Email/API]
-
-  APP --> LOG[Workers Observability]
-  ADMIN --> LOG
-```
 
 ---
 
 ## 3. Phase 0: Repository
 
 <!-- visual:start -->
-![構築フェーズの順序](assets/diagrams/13_hands_on_phases.svg)
-
-> **図の要点:** Foundation → App → Data → Security → Operationsの順で積み上げ、各段階で確認・Rollbackできる状態を維持する。
+{% include archify-diagram.html src="/assets/diagrams/13_hands_on_phases.html" title="構築フェーズの順序" summary="Foundation → App → Data → Security → Operationsの順で積み上げ、各段階で確認・Rollbackできる状態を維持する。" %}
 <!-- visual:end -->
 
 例:

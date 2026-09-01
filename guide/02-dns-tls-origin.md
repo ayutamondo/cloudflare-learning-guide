@@ -151,9 +151,7 @@ DSレコードがRegistrarに残ったまま署名側を変えるとSERVFAILの�
 # 6. TLSの二重構造
 
 <!-- visual:start -->
-![TLSは2区間で成立する](assets/diagrams/02_dns_tls_origin.svg)
-
-> **図の要点:** Client↔CloudflareとCloudflare↔Originは別々のTLS接続。証明書・暗号化モード・エラーを区間ごとに切り分ける。
+{% include archify-diagram.html src="/assets/diagrams/02_dns_tls_origin.html" title="TLSの二つの接続" summary="Client↔CloudflareとCloudflare↔Originは別々のTLS接続。証明書・暗号化モード・エラーを区間ごとに切り分ける。" %}
 <!-- visual:end -->
 
 Cloudflare Proxy利用時のHTTPSは二つの区間に分かれる。
@@ -169,9 +167,6 @@ Browserが鍵アイコンを表示するのは主にTLS Aが成立している�
 ## 7. Encryption Modes
 
 <!-- visual:start -->
-![Full (strict)の検証ポイント](assets/diagrams/02_full_strict_flow.svg)
-
-> **図の要点:** 本番ではFull (strict)を基準にし、Origin側の証明書有効性とhostname一致まで検証する。
 <!-- visual:end -->
 
 ### Off

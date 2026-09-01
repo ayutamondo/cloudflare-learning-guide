@@ -15,9 +15,7 @@ Cloudflareを前段へ入れても、Originが1台で壊れればCache MISSやdy
 ## 2. Availabilityは層ごとに考える
 
 <!-- visual:start -->
-![CloudflareとOriginを含む可用性設計](assets/diagrams/10_availability.svg)
-
-> **図の要点:** Edgeが高可用でもOriginが単一障害点ならサービスは落ちる。Health Check・Traffic Steering・データ層まで一体で設計する。
+{% include archify-diagram.html src="/assets/diagrams/10_availability.html" title="CloudflareとOriginを含む可用性設計" summary="Edgeが高可用でもOriginが単一障害点ならサービスは落ちる。Health Check・Traffic Steering・データ層まで一体で設計する。" %}
 <!-- visual:end -->
 
 ```text
@@ -84,15 +82,7 @@ Cloudflare Load Balancingは主に:
 
 で構成される。
 
-```mermaid
-flowchart TB
-  LB[Load Balancer] --> PA[Pool Tokyo]
-  LB --> PB[Pool Osaka]
-  PA --> A1[Endpoint A1]
-  PA --> A2[Endpoint A2]
-  PB --> B1[Endpoint B1]
-  PB --> B2[Endpoint B2]
-```
+{% include archify-diagram.html src="/assets/diagrams/10_lb_pools.html" title="Load BalancerのPool構成" summary="PoolとEndpointを分け、監視結果で正常な接続先へ誘導する。" %}
 
 ---
 
@@ -342,9 +332,6 @@ Load Balancerだけ成功してもapplication failoverが成功するとは限�
 ## 13. Disaster Recovery
 
 <!-- visual:start -->
-![HAとDRの違い](assets/diagrams/10_ha_vs_dr.svg)
-
-> **図の要点:** Load Balancingによる自動フェイルオーバーはHA。バックアップ・復旧手順・RTO/RPOまで含むDRとは分けて設計する。
 <!-- visual:end -->
 
 High AvailabilityとDisaster Recoveryを分ける。

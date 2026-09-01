@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Load BalancerのPool構成",
+    "quality_profile": "showcase",
+    "viewBox": [
+      980,
+      650
+    ]
+  },
+  "components": [
+    {
+      "id": "step1",
+      "type": "external",
+      "label": "Load Balancer",
+      "pos": [
+        60,
+        130
+      ],
+      "size": [
+        220,
+        86
+      ]
+    },
+    {
+      "id": "step2",
+      "type": "cloud",
+      "label": "Pool Tokyo",
+      "pos": [
+        370,
+        130
+      ],
+      "size": [
+        220,
+        86
+      ]
+    },
+    {
+      "id": "step3",
+      "type": "security",
+      "label": "Endpoint A1",
+      "pos": [
+        680,
+        130
+      ],
+      "size": [
+        220,
+        86
+      ]
+    },
+    {
+      "id": "step4",
+      "type": "backend",
+      "label": "Endpoint A2",
+      "pos": [
+        680,
+        380
+      ],
+      "size": [
+        220,
+        86
+      ]
+    },
+    {
+      "id": "step5",
+      "type": "database",
+      "label": "Pool Osaka",
+      "pos": [
+        370,
+        380
+      ],
+      "size": [
+        220,
+        86
+      ]
+    },
+    {
+      "id": "step6",
+      "type": "messagebus",
+      "label": "Endpoint B1 / B2",
+      "pos": [
+        60,
+        380
+      ],
+      "size": [
+        220,
+        86
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "edge1",
+      "from": "step1",
+      "to": "step2",
+      "label": "request",
+      "variant": "emphasis"
+    },
+    {
+      "id": "edge2",
+      "from": "step2",
+      "to": "step3",
+      "variant": "default"
+    },
+    {
+      "id": "edge3",
+      "from": "step3",
+      "to": "step4",
+      "variant": "default"
+    },
+    {
+      "id": "edge4",
+      "from": "step4",
+      "to": "step5",
+      "variant": "default"
+    },
+    {
+      "id": "edge5",
+      "from": "step5",
+      "to": "step6",
+      "variant": "default"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "この図で判断すること",
+      "items": [
+        "PoolとEndpointを分け、監視結果で正常な接続先へ誘導する"
+      ]
+    }
+  ]
+}

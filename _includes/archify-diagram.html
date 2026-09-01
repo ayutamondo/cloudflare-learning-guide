@@ -1,0 +1,10 @@
+<figure class="archify-diagram">
+  <iframe
+    class="archify-diagram__frame"
+    src="{{ include.src | relative_url }}"
+    title="{{ include.title }}"
+    loading="lazy"
+  ></iframe>
+  <figcaption>{{ include.summary }}</figcaption>
+  <p class="archify-diagram__link"><a href="{{ include.src | relative_url }}">図を大きく開く</a></p>
+</figure>

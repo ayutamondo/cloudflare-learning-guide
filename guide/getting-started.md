@@ -14,28 +14,10 @@ description: Cloudflare 実務学習ガイドの対象読者、学習順、必�
 ## この教材の考え方
 
 <!-- visual:start -->
-![Cloudflareで1リクエストが処理される流れ](assets/diagrams/00_request_lifecycle.svg)
-
-> **図の要点:** Cloudflareは製品名で暗記せず、リクエストが「DNS → Edge Security → Edge Logic → Data / Origin」と流れる構造で捉える。
+{% include archify-diagram.html src="/assets/diagrams/00_request_lifecycle.html" title="Cloudflareでのリクエスト処理" summary="Cloudflareは製品名で暗記せず、DNS・Edge Security・Edge Logic・Data / Originという処理の層で捉える。" %}
 <!-- visual:end -->
 
 Cloudflareは製品数が多いため、製品名を暗記すると全体像を見失いやすい。実務では、1リクエストが次のように流れると理解した方が判断しやすい。
-
-```mermaid
-flowchart LR
-  U[Browser / API Client] --> DNS[Authoritative DNS]
-  DNS --> EDGE[Cloudflare Edge]
-  EDGE --> TLS[TLS termination]
-  TLS --> RULES[Ruleset Engine]
-  RULES --> SEC[WAF / DDoS / Bot / Rate Limit]
-  SEC --> ACCESS[Access / Zero Trust]
-  ACCESS --> CACHE[Cache / CDN]
-  CACHE --> WORKER[Workers / Snippets]
-  WORKER --> DATA[KV / D1 / R2 / Durable Objects / Queues]
-  WORKER --> ORIGIN[Origin / Tunnel / Load Balancer]
-  ORIGIN --> EDGE
-  EDGE --> U
-```
 
 すべての機能を使う必要はない。重要なのは、**どの問題を、どの層で解決するべきか**を判断できること。
 

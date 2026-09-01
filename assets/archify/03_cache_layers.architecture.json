@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Browser・Edge・Originのキャッシュ階層",
+    "quality_profile": "showcase",
+    "viewBox": [
+      980,
+      650
+    ]
+  },
+  "components": [
+    {
+      "id": "step1",
+      "type": "external",
+      "label": "利用者",
+      "pos": [
+        60,
+        130
+      ],
+      "size": [
+        220,
+        86
+      ]
+    },
+    {
+      "id": "step2",
+      "type": "cloud",
+      "label": "Browser Cache",
+      "pos": [
+        370,
+        130
+      ],
+      "size": [
+        220,
+        86
+      ]
+    },
+    {
+      "id": "step3",
+      "type": "security",
+      "label": "Cloudflare Edge Cache",
+      "pos": [
+        680,
+        130
+      ],
+      "size": [
+        220,
+        86
+      ]
+    },
+    {
+      "id": "step4",
+      "type": "backend",
+      "label": "Cache Rules",
+      "pos": [
+        680,
+        380
+      ],
+      "size": [
+        220,
+        86
+      ]
+    },
+    {
+      "id": "step5",
+      "type": "database",
+      "label": "Origin",
+      "pos": [
+        370,
+        380
+      ],
+      "size": [
+        220,
+        86
+      ]
+    },
+    {
+      "id": "step6",
+      "type": "messagebus",
+      "label": "Source of truth",
+      "pos": [
+        60,
+        380
+      ],
+      "size": [
+        220,
+        86
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "edge1",
+      "from": "step1",
+      "to": "step2",
+      "label": "request",
+      "variant": "emphasis"
+    },
+    {
+      "id": "edge2",
+      "from": "step2",
+      "to": "step3",
+      "variant": "default"
+    },
+    {
+      "id": "edge3",
+      "from": "step3",
+      "to": "step4",
+      "variant": "default"
+    },
+    {
+      "id": "edge4",
+      "from": "step4",
+      "to": "step5",
+      "variant": "default"
+    },
+    {
+      "id": "edge5",
+      "from": "step5",
+      "to": "step6",
+      "variant": "default"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "この図で判断すること",
+      "items": [
+        "TTLとキャッシュキーを層ごとに分けて設計する"
+      ]
+    }
+  ]
+}

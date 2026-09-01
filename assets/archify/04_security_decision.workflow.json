@@ -1,0 +1,141 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "攻撃対策の選択フロー",
+    "quality_profile": "showcase",
+    "viewBox": [
+      1040,
+      550
+    ]
+  },
+  "lanes": [
+    {
+      "id": "first",
+      "label": "判断・処理の流れ"
+    },
+    {
+      "id": "second",
+      "label": "続き"
+    }
+  ],
+  "mainPath": [
+    "step1",
+    "step2",
+    "step3",
+    "step4",
+    "step5",
+    "step6"
+  ],
+  "semanticChecks": {
+    "allowedRoots": [
+      "step1"
+    ],
+    "allowedTerminals": [
+      "step6"
+    ],
+    "requiredPaths": [
+      {
+        "from": "step1",
+        "to": "step6"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "step1",
+      "lane": "first",
+      "col": 0,
+      "type": "external",
+      "label": "症状を観測",
+      "width": 144
+    },
+    {
+      "id": "step2",
+      "lane": "first",
+      "col": 1,
+      "type": "cloud",
+      "label": "大量トラフィック",
+      "width": 144
+    },
+    {
+      "id": "step3",
+      "lane": "first",
+      "col": 2,
+      "type": "security",
+      "label": "攻撃パターン",
+      "width": 144
+    },
+    {
+      "id": "step4",
+      "lane": "second",
+      "col": 2,
+      "type": "backend",
+      "label": "DDoS / WAF",
+      "width": 144
+    },
+    {
+      "id": "step5",
+      "lane": "second",
+      "col": 3,
+      "type": "database",
+      "label": "Challenge / Limit",
+      "width": 144
+    },
+    {
+      "id": "step6",
+      "lane": "second",
+      "col": 4,
+      "type": "messagebus",
+      "label": "アプリ制御",
+      "width": 144
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge1",
+      "from": "step1",
+      "to": "step2",
+      "label": "request",
+      "variant": "emphasis",
+      "role": "main"
+    },
+    {
+      "id": "edge2",
+      "from": "step2",
+      "to": "step3",
+      "variant": "default",
+      "role": "main"
+    },
+    {
+      "id": "edge3",
+      "from": "step3",
+      "to": "step4",
+      "variant": "default",
+      "role": "main"
+    },
+    {
+      "id": "edge4",
+      "from": "step4",
+      "to": "step5",
+      "variant": "default",
+      "role": "main"
+    },
+    {
+      "id": "edge5",
+      "from": "step5",
+      "to": "step6",
+      "variant": "default",
+      "role": "main"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "この図で判断すること",
+      "items": [
+        "ログと限定条件から始め、誤検知を確認して強化する"
+      ]
+    }
+  ]
+}

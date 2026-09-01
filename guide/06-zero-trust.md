@@ -51,9 +51,7 @@ Only authorized application
 ## 3. Cloudflare Oneの主要要素
 
 <!-- visual:start -->
-![Zero Trust全体構成](assets/diagrams/06_zero_trust.svg)
-
-> **図の要点:** Accessは「誰が何へアクセスできるか」、Tunnelは「Originを外へ安全につなぐ」、Gateway/WARPは利用端末側の通信制御を担う。
+{% include archify-diagram.html src="/assets/diagrams/06_zero_trust.html" title="Zero Trustの全体構成" summary="Accessは誰が何へアクセスできるか、TunnelはOriginを外へ安全につなぐこと、Gateway/WARPは端末側の通信制御を担う。" %}
 <!-- visual:end -->
 
 ### Access
@@ -81,13 +79,6 @@ DNS / HTTP / network trafficにpolicyを適用するsecure web gateway機能。
 ## 4. Cloudflare Tunnelのアーキテクチャ
 
 Origin側に `cloudflared` を動かす。
-
-```mermaid
-flowchart LR
-  U[User] --> C[Cloudflare Edge]
-  C <--> T[cloudflared]
-  T --> A[Private App]
-```
 
 `cloudflared` からCloudflareへoutbound connectionを張るため、Originにpublic routable IPを必須としない。
 
@@ -132,9 +123,7 @@ internal.example.local
 ## 6. Access Application
 
 <!-- visual:start -->
-![Cloudflare Accessの認証フロー](assets/diagrams/06_access_auth_flow.svg)
-
-> **図の要点:** Originへ到達する前にIdP認証とPolicy評価を完了し、許可された利用者だけをPrivate Appへ通す。
+{% include archify-diagram.html src="/assets/diagrams/06_access_auth_flow.html" title="Cloudflare Accessの認証フロー" summary="Originへ到達する前にIdP認証とPolicy評価を完了し、許可された利用者だけをPrivate Appへ通す。" %}
 <!-- visual:end -->
 
 Accessはapplication単位でpolicyを適用する。

@@ -24,9 +24,7 @@ title: 第1章 全体アーキテクチャ
 ## 2. Cloudflareは「通信経路の中間層」である
 
 <!-- visual:start -->
-![Cloudflare全体アーキテクチャ](assets/diagrams/01_cloudflare_architecture.svg)
-
-> **図の要点:** Proxied DNSではCloudflare EdgeがReverse Proxyとして通信経路に入り、Security・Cache・Workersなどの処理点になる。
+{% include archify-diagram.html src="/assets/diagrams/01_cloudflare_architecture.html" title="Cloudflare全体アーキテクチャ" summary="Proxied DNSではCloudflare EdgeがReverse Proxyとして通信経路に入り、Security・Cache・Workersなどの処理点になる。" %}
 <!-- visual:end -->
 
 典型的なWeb構成は次の通り。
@@ -63,9 +61,6 @@ Cloudflare Edgeは単なる中継ではない。ここで次のような処理�
 ## 3. 権威DNSとしてのCloudflare
 
 <!-- visual:start -->
-![ProxiedとDNS onlyの通信経路の違いを、二段のフローとして示したビジュアル](assets/images/figures/proxy-modes.png)
-
-> **図の要点:** DNSレコードが存在するだけではCloudflareの保護機能は働かない。ProxiedかDNS onlyかで、通信経路そのものが変わる。
 <!-- visual:end -->
 
 通常のFull setupでは、ドメインのレジストラに登録しているネームサーバーをCloudflare指定のネームサーバーへ変更する。これによりCloudflareがそのゾーンのPrimary Authoritative DNSになる。
@@ -115,23 +110,7 @@ Anycastによって得られる主な効果は次の通り。
 
 リバースプロキシはユーザーとOriginの間に入り、Originの代わりに接続を受ける。
 
-```mermaid
-sequenceDiagram
-  participant U as User
-  participant C as Cloudflare Edge
-  participant O as Origin
-
-  U->>C: HTTPS GET /article/1
-  C->>C: TLS / WAF / Rules / Cache check
-  alt Cache HIT
-    C-->>U: Cached Response
-  else Cache MISS
-    C->>O: Origin Request
-    O-->>C: Response
-    C->>C: Cache / Transform
-    C-->>U: Response
-  end
-```
+{% include archify-diagram.html src="/assets/diagrams/01_request_cache_sequence.html" title="Cache HITとMISSのリクエスト経路" summary="Cache HITならCloudflare Edgeが応答し、MISSならOriginへ問い合わせてから応答する。" %}
 
 ### 重要: TLS接続は2区間
 

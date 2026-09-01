@@ -110,9 +110,11 @@ img { max-width: 100%; height: auto; }
 .content th { background: #d8dfdc; }
 .content hr { border: 0; border-top: 1px solid var(--line); margin: 3rem 0; }
 .content > img { display: block; margin: 2rem 0; border: 1px solid var(--line); }
-.diagram-frame { width: min(100%, 52rem); margin: 2.5rem 0; padding: clamp(.6rem, 2vw, 1.3rem); border: 1px solid #88969a; background: #dce3e1; }
-.diagram-frame svg { display: block; width: 100%; height: auto; }
-.diagram-frame figcaption { margin-top: .7rem; color: var(--ink-muted); font-size: .78rem; line-height: 1.65; }
+.content > .archify-diagram { max-width: 58rem; }
+.archify-diagram { width: min(100%, 58rem); margin: 2.5rem 0; padding: clamp(.55rem, 1.5vw, .9rem); border: 1px solid #88969a; background: #dce3e1; }
+.archify-diagram__frame { display: block; width: 100%; height: clamp(29rem, 68vw, 38rem); border: 0; background: #fff; }
+.archify-diagram figcaption { margin: .85rem .25rem 0; color: var(--ink-muted); font-size: .9rem; line-height: 1.75; }
+.archify-diagram__link { margin: .35rem .25rem 0; font-size: .85rem; }
 .site-footer { display: flex; justify-content: space-between; gap: 2rem; padding: 1.25rem clamp(1rem, 3vw, 3rem); border-top: 1px solid #3d3f43; background: var(--night); color: #d4d2cb; font-size: .72rem; }
 .site-footer p { margin: 0; }
 .site-footer a { color: #fff; }
@@ -154,6 +156,11 @@ img { max-width: 100%; height: auto; }
   .content h1 { font-size: 2.15rem; }
   .content h2 { margin-top: 3.5rem; }
   .content p, .content li { font-size: .97rem; line-height: 2; }
+  .archify-diagram { margin: 2rem 0; padding: .45rem; }
+  .archify-diagram__frame { display: none; }
+  .archify-diagram figcaption { margin: .55rem; font-size: .95rem; }
+  .archify-diagram__link { margin: .7rem .55rem .55rem; }
+  .archify-diagram__link a { display: inline-block; padding: .6rem .8rem; border: 1px solid var(--indigo); background: #fff; }
   .site-footer { display: block; line-height: 1.9; }
   .site-footer p { margin-bottom: .35rem; }
 }

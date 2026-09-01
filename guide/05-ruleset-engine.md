@@ -21,9 +21,6 @@ Cloudflareを実務で使いこなすには、個別製品より先にRuleset En
 ## 2. Ruleset Engineとは
 
 <!-- visual:start -->
-![Ruleset Engineの責務分離](assets/diagrams/05_ruleset_engine.svg)
-
-> **図の要点:** Redirect・Transform・Origin・Cacheを目的別に分け、宣言的ルールで表現できる処理をWorkersへ過剰に寄せない。
 <!-- visual:end -->
 
 Ruleset EngineはCloudflare上の多くの「条件に一致した通信へ処理を適用する」機能の共通基盤。
@@ -126,9 +123,6 @@ Cache eligibilityやTTL等を設定する。
 ## 4. RedirectとRewriteの違い
 
 <!-- visual:start -->
-![RedirectとRewriteの違い](assets/diagrams/05_redirect_vs_rewrite.svg)
-
-> **図の要点:** 利用者のURLを変更するのがRedirect、内部の送信先だけ変更するのがRewrite。SEOやcanonical設計にも影響する。
 <!-- visual:end -->
 
 ### Redirect
