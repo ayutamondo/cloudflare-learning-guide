@@ -100,7 +100,7 @@ img { max-width: 100%; height: auto; }
 .site-nav .progress-link.is-read { color: #3a3d40; }
 .site-nav .progress-link.is-read .nav-status { background: transparent; color: #1f8c4c; font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24; }
 .site-nav .progress-link.is-unread { color: var(--ink); }
-.site-nav .progress-link.is-unread .nav-status { background: #ea6a6a; border-radius: 50%; color: transparent; font-size: 0; }
+.site-nav .progress-link.is-unread .nav-status { width: 0.7rem; height: 0.7rem; background: #ea6a6a; border-radius: 50%; color: transparent; font-size: 0; }
 .site-nav ol { display: grid; gap: .12rem; margin: .2rem 0; padding: 0; list-style: none; border-top: 1px solid #a7afad; border-bottom: 1px solid #a7afad; }
 .site-nav li { border-bottom: 1px solid #c0c5c3; }
 .site-nav li:last-child { border-bottom: 0; }

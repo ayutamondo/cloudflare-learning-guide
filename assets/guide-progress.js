@@ -128,8 +128,15 @@
       }
 
       const normalizedPath = normalizePathname(new URL(href, window.location.href).pathname);
-      const excludedPaths = ['/', '/guide/getting-started', '/reference/source-index'];
-      if (excludedPaths.includes(normalizedPath)) {
+      const hrefValue = href.toLowerCase();
+      const excludedPaths = ['/', '/guide/getting-started', '/reference/source-index', '/index', '/guide/getting-started.html', '/reference/source-index.html', '/guide/getting-started/', '/reference/source-index/'];
+      const isExcludedPage = excludedPaths.includes(normalizedPath)
+        || hrefValue.includes('index.html')
+        || hrefValue.includes('getting-started.html')
+        || hrefValue.includes('source-index.html')
+        || hrefValue.includes('/guide/getting-started')
+        || hrefValue.includes('/reference/source-index');
+      if (isExcludedPage) {
         link.classList.remove('is-read', 'is-unread');
         const existingStatus = link.querySelector('.nav-status');
         if (existingStatus) {
