@@ -69,6 +69,22 @@
     delete progress[pageKey];
     writeProgress(progress);
     applyStatusToLinks();
+    syncBookmarkState();
+  }
+
+  function syncBookmarkState() {
+    const bookmarkLink = document.querySelector('.bookmark-link');
+    if (!bookmarkLink) {
+      return;
+    }
+
+    const pageKey = getCurrentPageKey();
+    const progress = readProgress();
+    const hasSavedPageState = Object.prototype.hasOwnProperty.call(progress, pageKey);
+    const state = getPageEntry(pageKey);
+    const hasSavedState = hasSavedPageState || !!state.lastHeadingId || Number(state.scrollY) > 0 || state.status === 'read';
+    bookmarkLink.classList.toggle('is-active', hasSavedState);
+    bookmarkLink.classList.toggle('is-inactive', !hasSavedState);
   }
 
   function getVisibleHeading() {
@@ -101,6 +117,7 @@
       lastHeadingId: headingId,
       scrollY: Math.max(window.scrollY, 0)
     });
+    syncBookmarkState();
   }
 
   function applyStatusToLinks() {
@@ -159,14 +176,6 @@
     if (bookmarkLink) {
       bookmarkLink.addEventListener('click', function (event) {
         event.preventDefault();
-        const state = getPageEntry(getCurrentPageKey());
-        const hasSavedSection = !!state.lastHeadingId || Number(state.scrollY) > 0;
-
-        if (hasSavedSection) {
-          bookmarkLink.classList.add('is-active');
-          bookmarkLink.classList.remove('is-inactive');
-        }
-
         jumpToSavedSection();
       });
     }
@@ -175,20 +184,11 @@
     if (resetButton) {
       resetButton.addEventListener('click', function () {
         clearCurrentPageEntry();
-        if (bookmarkLink) {
-          bookmarkLink.classList.remove('is-active');
-          bookmarkLink.classList.add('is-inactive');
-        }
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
 
-    if (bookmarkLink) {
-      const state = getPageEntry(getCurrentPageKey());
-      const hasSavedSection = !!state.lastHeadingId || Number(state.scrollY) > 0;
-      bookmarkLink.classList.toggle('is-active', hasSavedSection);
-      bookmarkLink.classList.toggle('is-inactive', !hasSavedSection);
-    }
+    syncBookmarkState();
   }
 
   function initProgressTracking() {
@@ -198,6 +198,7 @@
       scrollY: Math.max(window.scrollY, 0)
     });
     applyStatusToLinks();
+    syncBookmarkState();
     bindControls();
 
     let ticking = false;
