@@ -95,8 +95,8 @@ img { max-width: 100%; height: auto; }
 .site-nav nav { display: grid; gap: .6rem; font-size: .8rem; line-height: 1.55; }
 .site-nav a { text-decoration: none; }
 .site-nav nav > a { font-weight: 700; }
-.site-nav .progress-link { display: inline-flex; align-items: center; justify-content: space-between; gap: 10px; padding: .18rem 0; }
-.site-nav .progress-link .nav-status { display: inline-flex; align-items: center; justify-content: center; width: 1.1rem; height: 1.1rem; font-size: .9rem; font-weight: 700; line-height: 1; flex-shrink: 0; }
+.site-nav .progress-link { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; padding: .18rem 0; }
+.site-nav .progress-link .nav-status { display: inline-flex; align-items: center; justify-content: center; width: 1.1rem; height: 1.1rem; font-size: .9rem; font-weight: 700; line-height: 1; flex-shrink: 0; margin-left: auto; }
 .site-nav .progress-link.is-read { color: #3a3d40; }
 .site-nav .progress-link.is-read .nav-status { background: transparent; color: #1f8c4c; font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24; }
 .site-nav .progress-link.is-unread { color: var(--ink); }

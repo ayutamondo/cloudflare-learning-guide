@@ -64,15 +64,6 @@
     writeProgress(progress);
   }
 
-  function clearCurrentPageEntry() {
-    const progress = readProgress();
-    const pageKey = getCurrentPageKey();
-    delete progress[pageKey];
-    writeProgress(progress);
-    applyStatusToLinks();
-    syncBookmarkState();
-  }
-
   function resetProgress() {
     suppressAutoProgress = true;
 
@@ -83,28 +74,11 @@
     }
 
     applyStatusToLinks();
-    syncBookmarkState();
 
     window.setTimeout(function () {
       suppressAutoProgress = false;
       applyStatusToLinks();
-      syncBookmarkState();
     }, 0);
-  }
-
-  function syncBookmarkState() {
-    const bookmarkLink = document.querySelector('.bookmark-link');
-    if (!bookmarkLink) {
-      return;
-    }
-
-    const pageKey = getCurrentPageKey();
-    const progress = readProgress();
-    const hasSavedPageState = Object.prototype.hasOwnProperty.call(progress, pageKey);
-    const state = getPageEntry(pageKey);
-    const hasSavedState = hasSavedPageState || !!state.lastHeadingId || Number(state.scrollY) > 0 || state.status === 'read';
-    bookmarkLink.classList.toggle('is-active', hasSavedState);
-    bookmarkLink.classList.toggle('is-inactive', !hasSavedState);
   }
 
   function getVisibleHeading() {
@@ -141,7 +115,6 @@
       lastHeadingId: headingId,
       scrollY: Math.max(window.scrollY, 0)
     });
-    syncBookmarkState();
   }
 
   function applyStatusToLinks() {
@@ -154,7 +127,9 @@
         return;
       }
 
-      if (link.getAttribute('href') === '/reference/source-index.html' || link.getAttribute('href') === 'reference/source-index.html') {
+      const normalizedPath = normalizePathname(new URL(href, window.location.href).pathname);
+      const excludedPaths = ['/', '/guide/getting-started', '/reference/source-index'];
+      if (excludedPaths.includes(normalizedPath)) {
         link.classList.remove('is-read', 'is-unread');
         const existingStatus = link.querySelector('.nav-status');
         if (existingStatus) {
@@ -163,7 +138,7 @@
         return;
       }
 
-      const key = normalizePathname(new URL(href, window.location.href).pathname);
+      const key = normalizedPath;
       const entry = progress[key];
       const isRead = entry === 'read' || (entry && typeof entry === 'object' && entry.status === 'read');
 
@@ -183,36 +158,7 @@
     });
   }
 
-  function jumpToSavedSection() {
-    const state = getPageEntry(getCurrentPageKey());
-    const targetId = state.lastHeadingId;
-
-    if (targetId) {
-      const target = document.getElementById(targetId);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        return;
-      }
-    }
-
-    const savedScrollY = Number(state.scrollY) || 0;
-    if (savedScrollY > 0) {
-      window.scrollTo({ top: savedScrollY, behavior: 'smooth' });
-      return;
-    }
-
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
   function bindControls() {
-    const bookmarkLink = document.querySelector('.bookmark-link');
-    if (bookmarkLink) {
-      bookmarkLink.addEventListener('click', function (event) {
-        event.preventDefault();
-        jumpToSavedSection();
-      });
-    }
-
     const resetButton = document.querySelector('.reset-link');
     if (resetButton) {
       resetButton.addEventListener('click', function () {
@@ -220,8 +166,6 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
-
-    syncBookmarkState();
   }
 
   function initProgressTracking() {
@@ -231,7 +175,6 @@
       scrollY: Math.max(window.scrollY, 0)
     });
     applyStatusToLinks();
-    syncBookmarkState();
     bindControls();
 
     let ticking = false;

@@ -18,12 +18,11 @@
         <a class="site-brand" href="{{ '/' | relative_url }}"><span>CF</span> 実務学習ガイド</a>
         <p>Cloudflareを、仕組みから実務導入まで体系的に学ぶ</p>
         <div class="header-actions">
+          {% unless page.url == '/' or page.url == '/guide/getting-started.html' or page.url == '/reference/source-index.html' %}
           <button class="reset-link" type="button" aria-label="学習状態をリセット" title="学習状態をリセット">
             <span class="material-symbols-rounded" aria-hidden="true">restart_alt</span>
           </button>
-          <a class="bookmark-link is-inactive" href="#" aria-label="最後に読んだところへ戻る" title="最後に読んだところへ戻る">
-            <span class="material-symbols-rounded" aria-hidden="true">bookmark</span>
-          </a>
+          {% endunless %}
           <a class="header-home-link" href="{{ '/' | relative_url }}">目次へ ↗</a>
         </div>
       </div>
@@ -31,10 +30,10 @@
     <div class="site-shell">
       <aside class="site-nav" aria-label="章一覧">
         <nav>
+          <a class="progress-link" href="{{ '/index.html' | relative_url }}">学習ガイドの入口</a>
+          <a class="progress-link" href="{{ '/guide/getting-started.html' | relative_url }}">はじめに・学習方法</a>
+          <p>全13章</p>
           <ol>
-            <li><a class="progress-link" href="{{ '/index.html' | relative_url }}">学習ガイドの入口</a></li>
-            <li><a class="progress-link" href="{{ '/guide/getting-started.html' | relative_url }}">はじめに・学習方法</a></li>
-            <li><p>全13章</p></li>
             <li><a class="progress-link" href="{{ '/guide/01-architecture.html' | relative_url }}">全体アーキテクチャ</a></li>
             <li><a class="progress-link" href="{{ '/guide/02-dns-tls-origin.html' | relative_url }}">DNS・TLS・オリジン保護</a></li>
             <li><a class="progress-link" href="{{ '/guide/03-cdn-cache-performance.html' | relative_url }}">CDN・キャッシュ</a></li>
@@ -48,8 +47,8 @@
             <li><a class="progress-link" href="{{ '/guide/11-operations.html' | relative_url }}">Observability・運用</a></li>
             <li><a class="progress-link" href="{{ '/guide/12-pricing.html' | relative_url }}">料金・プラン</a></li>
             <li><a class="progress-link" href="{{ '/guide/13-hands-on.html' | relative_url }}">総合ハンズオン</a></li>
-            <li><a class="progress-link" href="{{ '/reference/source-index.html' | relative_url }}">公式ソース索引</a></li>
           </ol>
+          <a class="progress-link" href="{{ '/reference/source-index.html' | relative_url }}">公式ソース索引</a>
         </nav>
       </aside>
       <main id="content" class="content" tabindex="-1">
