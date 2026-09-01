@@ -25,7 +25,7 @@ WorkersはStatic AssetsをWorker codeと一体でdeployできる。
 ## 2. 2026年の重要な方針: 新規はWorkers中心
 
 <!-- visual:start -->
-![Workers中心のFull-stack構成](assets/diagrams/09_fullstack.png)
+![Workers中心のFull-stack構成](assets/diagrams/09_fullstack.svg)
 
 > **図の要点:** Static AssetsとAPIを同じWorkerプロジェクトへ統合できるが、静的ファイルは静的のまま返す設計が基本。
 <!-- visual:end -->
@@ -83,7 +83,7 @@ Cloudflareはstatic assetsをglobal networkでcache/serveする。
 ## 4. Asset-firstとWorker-first
 
 <!-- visual:start -->
-![Asset-first / Worker-firstの判断](assets/diagrams/09_asset_vs_worker.png)
+![Asset-first / Worker-firstの判断](assets/diagrams/09_asset_vs_worker.svg)
 
 > **図の要点:** 全リクエストをWorkerへ通すのではなく、認証や動的処理が必要なpathだけWorker-firstにする選択肢を持つ。
 <!-- visual:end -->

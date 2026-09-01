@@ -24,7 +24,7 @@ title: 第1章 全体アーキテクチャ
 ## 2. Cloudflareは「通信経路の中間層」である
 
 <!-- visual:start -->
-![Cloudflare全体アーキテクチャ](assets/diagrams/01_cloudflare_architecture.png)
+![Cloudflare全体アーキテクチャ](assets/diagrams/01_cloudflare_architecture.svg)
 
 > **図の要点:** Proxied DNSではCloudflare EdgeがReverse Proxyとして通信経路に入り、Security・Cache・Workersなどの処理点になる。
 <!-- visual:end -->
@@ -63,7 +63,7 @@ Cloudflare Edgeは単なる中継ではない。ここで次のような処理�
 ## 3. 権威DNSとしてのCloudflare
 
 <!-- visual:start -->
-![ProxiedとDNS onlyの違い](assets/diagrams/01_proxy_modes.png)
+![ProxiedとDNS onlyの違い](assets/diagrams/01_proxy_modes.svg)
 
 > **図の要点:** DNSレコードが存在するだけではCloudflareの保護機能は働かない。ProxiedかDNS onlyかで、通信経路そのものが変わる。
 <!-- visual:end -->

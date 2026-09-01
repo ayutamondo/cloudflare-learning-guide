@@ -23,7 +23,7 @@ title: 第3章 CDN・キャッシュ・パフォーマンス
 ## 2. Cacheの基本モデル
 
 <!-- visual:start -->
-![Browser / Edge / Originのキャッシュ階層](assets/diagrams/03_cache_layers.png)
+![Browser / Edge / Originのキャッシュ階層](assets/diagrams/03_cache_layers.svg)
 
 > **図の要点:** Browser CacheとCloudflare Edge Cacheは別レイヤー。TTL・Purge・Cache-Controlを混同しない。
 <!-- visual:end -->
@@ -114,7 +114,7 @@ Cache-Control: private, no-store
 ## 5. `CF-Cache-Status`
 
 <!-- visual:start -->
-![キャッシュ調査の基本フロー](assets/diagrams/03_cache_status_flow.png)
+![キャッシュ調査の基本フロー](assets/diagrams/03_cache_status_flow.svg)
 
 > **図の要点:** 設定画面だけで判断せず、実レスポンスのCF-Cache-Status・Age・Cache-Controlを観測してHIT/MISS理由を追う。
 <!-- visual:end -->

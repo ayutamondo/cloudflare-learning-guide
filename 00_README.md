@@ -14,7 +14,7 @@ description: Cloudflare 実務学習ガイドの対象読者、学習順、必�
 ## この教材の考え方
 
 <!-- visual:start -->
-![Cloudflareで1リクエストが処理される流れ](assets/diagrams/00_request_lifecycle.png)
+![Cloudflareで1リクエストが処理される流れ](assets/diagrams/00_request_lifecycle.svg)
 
 > **図の要点:** Cloudflareは製品名で暗記せず、リクエストが「DNS → Edge Security → Edge Logic → Data / Origin」と流れる構造で捉える。
 <!-- visual:end -->

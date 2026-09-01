@@ -51,7 +51,7 @@ Only authorized application
 ## 3. Cloudflare Oneの主要要素
 
 <!-- visual:start -->
-![Zero Trust全体構成](assets/diagrams/06_zero_trust.png)
+![Zero Trust全体構成](assets/diagrams/06_zero_trust.svg)
 
 > **図の要点:** Accessは「誰が何へアクセスできるか」、Tunnelは「Originを外へ安全につなぐ」、Gateway/WARPは利用端末側の通信制御を担う。
 <!-- visual:end -->
@@ -132,7 +132,7 @@ internal.example.local
 ## 6. Access Application
 
 <!-- visual:start -->
-![Cloudflare Accessの認証フロー](assets/diagrams/06_access_auth_flow.png)
+![Cloudflare Accessの認証フロー](assets/diagrams/06_access_auth_flow.svg)
 
 > **図の要点:** Originへ到達する前にIdP認証とPolicy評価を完了し、許可された利用者だけをPrivate Appへ通す。
 <!-- visual:end -->

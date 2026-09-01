@@ -15,7 +15,7 @@ Workersを「AWS LambdaのCloudflare版」とだけ捉えると設計を誤る�
 ## 2. Workersの実行モデル
 
 <!-- visual:start -->
-![Workers RuntimeとBindings](assets/diagrams/07_workers_runtime.png)
+![Workers RuntimeとBindings](assets/diagrams/07_workers_runtime.svg)
 
 > **図の要点:** Workerは常駐サーバーではなく、Isolate上でリクエストを処理し、状態はBindingsや外部サービスへ置く。
 <!-- visual:end -->
@@ -107,7 +107,7 @@ Node.js compatibilityも拡張されているが、すべてを「普通のNode 
 ## 5. C3とWrangler
 
 <!-- visual:start -->
-![Wranglerを中心にした開発サイクル](assets/diagrams/07_wrangler_cycle.png)
+![Wranglerを中心にした開発サイクル](assets/diagrams/07_wrangler_cycle.svg)
 
 > **図の要点:** ローカル開発・Deploy・LogsまでCLIで再現可能にし、Dashboard上の手作業を減らすとチーム運用しやすい。
 <!-- visual:end -->

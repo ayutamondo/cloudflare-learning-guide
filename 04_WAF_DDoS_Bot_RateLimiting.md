@@ -15,7 +15,7 @@ Cloudflareのセキュリティ機能は名称が似ているが、守る対象�
 ## 2. 脅威と機能の対応
 
 <!-- visual:start -->
-![Cloudflare Securityの多層防御](assets/diagrams/04_security_layers.png)
+![Cloudflare Securityの多層防御](assets/diagrams/04_security_layers.svg)
 
 > **図の要点:** DDoS・WAF・Bot・Rate Limitingは同じ機能ではない。脅威の種類に応じて適切なレイヤーを選ぶ。
 <!-- visual:end -->
@@ -118,7 +118,7 @@ Custom Rulesは順序評価され、Block等のterminating actionは後続評価
 ## 6. Managed Challenge
 
 <!-- visual:start -->
-![攻撃症状から対策を選ぶ](assets/diagrams/04_security_decision.png)
+![攻撃症状から対策を選ぶ](assets/diagrams/04_security_decision.svg)
 
 > **図の要点:** Blockを最初から強く掛けるより、ログ・Challenge・Rate Limitを使いながら誤検知と業務影響を見て強化する。
 <!-- visual:end -->
