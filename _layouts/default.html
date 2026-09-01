@@ -14,31 +14,39 @@
       <div class="site-header__inner">
         <a class="site-brand" href="{{ '/' | relative_url }}"><span>CF</span> 実務学習ガイド</a>
         <p>Cloudflareを、仕組みから実務導入まで体系的に学ぶ</p>
-        <a class="header-home-link" href="{{ '/' | relative_url }}">目次へ ↗</a>
+        <div class="header-actions">
+          <button class="reset-link" type="button" aria-label="学習状態をリセット" title="学習状態をリセット">
+            <span aria-hidden="true">↺</span>
+          </button>
+          <a class="bookmark-link" href="#" aria-label="最後に読んだところへ戻る" title="最後に読んだところへ戻る">
+            <span aria-hidden="true">🔖</span>
+          </a>
+          <a class="header-home-link" href="{{ '/' | relative_url }}">目次へ ↗</a>
+        </div>
       </div>
     </header>
     <div class="site-shell">
       <aside class="site-nav" aria-label="章一覧">
         <p>全13章</p>
         <nav>
-          <a href="{{ '/index.html' | relative_url }}">学習ガイドの入口</a>
-          <a href="{{ '/guide/getting-started.html' | relative_url }}">はじめに・学習方法</a>
+          <a class="progress-link" href="{{ '/index.html' | relative_url }}">学習ガイドの入口</a>
+          <a class="progress-link" href="{{ '/guide/getting-started.html' | relative_url }}">はじめに・学習方法</a>
           <ol>
-            <li><a href="{{ '/guide/01-architecture.html' | relative_url }}">全体アーキテクチャ</a></li>
-            <li><a href="{{ '/guide/02-dns-tls-origin.html' | relative_url }}">DNS・TLS・オリジン保護</a></li>
-            <li><a href="{{ '/guide/03-cdn-cache-performance.html' | relative_url }}">CDN・キャッシュ</a></li>
-            <li><a href="{{ '/guide/04-security.html' | relative_url }}">WAF・DDoS・Bot</a></li>
-            <li><a href="{{ '/guide/05-ruleset-engine.html' | relative_url }}">Ruleset Engine</a></li>
-            <li><a href="{{ '/guide/06-zero-trust.html' | relative_url }}">Zero Trust</a></li>
-            <li><a href="{{ '/guide/07-workers-runtime.html' | relative_url }}">Workers・Wrangler</a></li>
-            <li><a href="{{ '/guide/08-data-storage.html' | relative_url }}">Data・Storage</a></li>
-            <li><a href="{{ '/guide/09-full-stack.html' | relative_url }}">Full-stack配信</a></li>
-            <li><a href="{{ '/guide/10-reliability.html' | relative_url }}">可用性・Load Balancing</a></li>
-            <li><a href="{{ '/guide/11-operations.html' | relative_url }}">Observability・運用</a></li>
-            <li><a href="{{ '/guide/12-pricing.html' | relative_url }}">料金・プラン</a></li>
-            <li><a href="{{ '/guide/13-hands-on.html' | relative_url }}">総合ハンズオン</a></li>
+            <li><a class="progress-link" href="{{ '/guide/01-architecture.html' | relative_url }}">全体アーキテクチャ</a></li>
+            <li><a class="progress-link" href="{{ '/guide/02-dns-tls-origin.html' | relative_url }}">DNS・TLS・オリジン保護</a></li>
+            <li><a class="progress-link" href="{{ '/guide/03-cdn-cache-performance.html' | relative_url }}">CDN・キャッシュ</a></li>
+            <li><a class="progress-link" href="{{ '/guide/04-security.html' | relative_url }}">WAF・DDoS・Bot</a></li>
+            <li><a class="progress-link" href="{{ '/guide/05-ruleset-engine.html' | relative_url }}">Ruleset Engine</a></li>
+            <li><a class="progress-link" href="{{ '/guide/06-zero-trust.html' | relative_url }}">Zero Trust</a></li>
+            <li><a class="progress-link" href="{{ '/guide/07-workers-runtime.html' | relative_url }}">Workers・Wrangler</a></li>
+            <li><a class="progress-link" href="{{ '/guide/08-data-storage.html' | relative_url }}">Data・Storage</a></li>
+            <li><a class="progress-link" href="{{ '/guide/09-full-stack.html' | relative_url }}">Full-stack配信</a></li>
+            <li><a class="progress-link" href="{{ '/guide/10-reliability.html' | relative_url }}">可用性・Load Balancing</a></li>
+            <li><a class="progress-link" href="{{ '/guide/11-operations.html' | relative_url }}">Observability・運用</a></li>
+            <li><a class="progress-link" href="{{ '/guide/12-pricing.html' | relative_url }}">料金・プラン</a></li>
+            <li><a class="progress-link" href="{{ '/guide/13-hands-on.html' | relative_url }}">総合ハンズオン</a></li>
           </ol>
-          <a href="{{ '/reference/source-index.html' | relative_url }}">公式ソース索引</a>
+          <a class="progress-link" href="{{ '/reference/source-index.html' | relative_url }}">公式ソース索引</a>
         </nav>
       </aside>
       <main id="content" class="content" tabindex="-1">
@@ -50,5 +58,6 @@
       <a href="{{ '/' | relative_url }}">学習ガイドの入口へ戻る ↗</a>
     </footer>
     <script src="{{ '/assets/diagram-theme.js' | relative_url }}" defer></script>
+    <script src="{{ '/assets/guide-progress.js' | relative_url }}" defer></script>
   </body>
 </html>
