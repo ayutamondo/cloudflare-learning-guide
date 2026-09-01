@@ -1,3 +1,7 @@
+---
+title: 第6章 Zero Trust
+---
+
 # 第6章 Zero Trust: Access・Tunnel・Gateway・WARP
 
 ## 1. 学習目標
@@ -397,4 +401,3 @@ Webhook pathだけmachine trafficのため例外にする場合も、source vali
 - Self-hosted applications: https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/
 - One-time PIN: https://developers.cloudflare.com/cloudflare-one/integrations/identity-providers/one-time-pin/
 - Connectivity options: https://developers.cloudflare.com/cloudflare-one/networks/connectivity-options/
-

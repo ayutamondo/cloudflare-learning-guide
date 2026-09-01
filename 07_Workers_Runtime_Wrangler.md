@@ -1,3 +1,7 @@
+---
+title: 第7章 Workers・Wrangler
+---
+
 # 第7章 Cloudflare Workers: Runtime・Wrangler・Routing
 
 ## 1. 学習目標
@@ -465,4 +469,3 @@ Production前にlogs/metricsを有効化する。
 - Workers routes: https://developers.cloudflare.com/workers/configuration/routing/routes/
 - workers.dev: https://developers.cloudflare.com/workers/configuration/routing/workers-dev/
 - Limits: https://developers.cloudflare.com/workers/platform/limits/
-

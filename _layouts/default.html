@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'ja' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ page.description | default: site.description | escape }}">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
+  </head>
+  <body>
+    <a class="skip-link" href="#content">本文へ移動</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="site-brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        <p>Cloudflareを、仕組みから実務導入まで体系的に学ぶ</p>
+      </div>
+    </header>
+    <div class="site-shell">
+      <aside class="site-nav" aria-label="章一覧">
+        <details>
+          <summary>章を選ぶ</summary>
+          <nav>
+            <a href="{{ '/index.html' | relative_url }}">学習ガイドの入口</a>
+            <a href="{{ '/00_README.html' | relative_url }}">はじめに・学習方法</a>
+            <ol>
+              <li><a href="{{ '/01_Cloudflare全体アーキテクチャ.html' | relative_url }}">全体アーキテクチャ</a></li>
+              <li><a href="{{ '/02_DNS_TLS_オリジン保護.html' | relative_url }}">DNS・TLS・オリジン保護</a></li>
+              <li><a href="{{ '/03_CDNキャッシュ_パフォーマンス.html' | relative_url }}">CDN・キャッシュ</a></li>
+              <li><a href="{{ '/04_WAF_DDoS_Bot_RateLimiting.html' | relative_url }}">WAF・DDoS・Bot</a></li>
+              <li><a href="{{ '/05_RulesetEngine_ルーティング.html' | relative_url }}">Ruleset Engine</a></li>
+              <li><a href="{{ '/06_ZeroTrust_Access_Tunnel_Gateway.html' | relative_url }}">Zero Trust</a></li>
+              <li><a href="{{ '/07_Workers_Runtime_Wrangler.html' | relative_url }}">Workers・Wrangler</a></li>
+              <li><a href="{{ '/08_Storage_Data_KV_R2_D1_DO_Queues_Hyperdrive.html' | relative_url }}">Data・Storage</a></li>
+              <li><a href="{{ '/09_FullStack_静的配信_フレームワーク.html' | relative_url }}">Full-stack配信</a></li>
+              <li><a href="{{ '/10_可用性_LoadBalancing_Origin設計.html' | relative_url }}">可用性・Load Balancing</a></li>
+              <li><a href="{{ '/11_Observability_API_IaC_運用.html' | relative_url }}">Observability・運用</a></li>
+              <li><a href="{{ '/12_料金_プラン_設計判断.html' | relative_url }}">料金・プラン</a></li>
+              <li><a href="{{ '/13_総合ハンズオン_実務導入チェックリスト.html' | relative_url }}">総合ハンズオン</a></li>
+            </ol>
+            <a href="{{ '/SOURCE_INDEX.html' | relative_url }}">公式ソース索引</a>
+          </nav>
+        </details>
+      </aside>
+      <main id="content" class="content" tabindex="-1">
+        {{ content }}
+      </main>
+    </div>
+    <footer class="site-footer"><a href="{{ '/' | relative_url }}">Cloudflare 実務学習ガイド</a></footer>
+  </body>
+</html>

@@ -1,3 +1,7 @@
+---
+title: 第8章 Data・Storage
+---
+
 # 第8章 Data / Storage: KV・R2・D1・Durable Objects・Queues・Hyperdrive
 
 ## 1. 学習目標
@@ -541,4 +545,3 @@ Cache freshnessとconnection pool sizeをDB特性に合わせる。
 - Durable Objects: https://developers.cloudflare.com/durable-objects/concepts/what-are-durable-objects/
 - Queues delivery guarantees: https://developers.cloudflare.com/queues/reference/delivery-guarantees/
 - Hyperdrive: https://developers.cloudflare.com/hyperdrive/concepts/how-hyperdrive-works/
-

@@ -1,3 +1,7 @@
+---
+title: 第4章 WAF・DDoS・Bot・Rate Limiting
+---
+
 # 第4章 WAF・DDoS・Bot・Rate Limiting
 
 ## 1. 学習目標
@@ -377,4 +381,3 @@ Challengeを増やしすぎればCVRやログイン成功率を下げる可能�
 - Ruleset phases: https://developers.cloudflare.com/ruleset-engine/reference/phases-list/
 - Turnstile: https://developers.cloudflare.com/turnstile/
 - Cloudflare plans: https://www.cloudflare.com/plans/
-

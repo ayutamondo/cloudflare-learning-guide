@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cloudflare 学習ガイド整備"
+  short_description: "初学者向けの実践型公開教材を構成・検証する"
+  default_prompt: "$cloudflare-learning-guide を使って、この教材を初学者が実践できる公開サイトとして整備してください。"

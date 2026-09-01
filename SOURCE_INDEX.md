@@ -1,3 +1,7 @@
+---
+title: 公式ソース索引
+---
+
 # 公式ソース索引
 
 基準日: 2026-08-31
@@ -84,4 +88,3 @@
 - https://developers.cloudflare.com/d1/platform/pricing/
 - https://developers.cloudflare.com/queues/platform/pricing/
 - https://developers.cloudflare.com/images/pricing/
-

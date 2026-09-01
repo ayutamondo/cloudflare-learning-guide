@@ -1,5 +1,12 @@
 title: Cloudflare 実務学習ガイド
 description: Cloudflareを実務で設計・運用するための学習ガイド
 lang: ja
-theme: jekyll-theme-cayman
 markdown: kramdown
+kramdown:
+  input: GFM
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: default

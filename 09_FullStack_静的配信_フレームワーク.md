@@ -1,3 +1,7 @@
+---
+title: 第9章 Full-stack配信
+---
+
 # 第9章 Full-stack配信・Static Assets・フレームワーク
 
 ## 1. 学習目標
@@ -465,4 +469,3 @@ Framework adapterがCloudflare runtimeの制約を隠し、version update時に�
 - Astro: https://developers.cloudflare.com/workers/framework-guides/web-apps/astro/
 - Next.js: https://developers.cloudflare.com/workers/framework-guides/web-apps/nextjs/
 - Pages: https://developers.cloudflare.com/pages/
-

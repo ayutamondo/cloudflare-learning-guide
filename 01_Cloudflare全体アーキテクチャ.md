@@ -1,3 +1,7 @@
+---
+title: 第1章 全体アーキテクチャ
+---
+
 # 第1章 Cloudflareの全体アーキテクチャ
 
 ## 1. 学習目標
@@ -368,4 +372,3 @@ Chrome DevTools > Networkで次を観察する。
 - Cloudflare IP addresses / Anycast: https://developers.cloudflare.com/fundamentals/concepts/cloudflare-ip-addresses/
 - Ruleset Engine phases: https://developers.cloudflare.com/ruleset-engine/about/phases/
 - Phases list: https://developers.cloudflare.com/ruleset-engine/reference/phases-list/
-

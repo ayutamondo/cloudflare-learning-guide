@@ -1,3 +1,7 @@
+---
+title: 第11章 Observability・運用
+---
+
 # 第11章 Observability・API・IaC・運用設計
 
 ## 1. 学習目標
@@ -458,4 +462,3 @@ WAF Ruleを1個追加するだけでもsite全体をBlockできるため、コ�
 - Tail Workers: https://developers.cloudflare.com/workers/observability/logs/tail-workers/
 - API tokens: https://developers.cloudflare.com/fundamentals/api/get-started/create-token/
 - API overview: https://developers.cloudflare.com/fundamentals/api/get-started/
-

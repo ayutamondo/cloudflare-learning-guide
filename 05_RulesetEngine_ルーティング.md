@@ -1,3 +1,7 @@
+---
+title: 第5章 Ruleset Engine
+---
+
 # 第5章 Ruleset Engineとトラフィック制御
 
 ## 1. 学習目標
@@ -428,4 +432,3 @@ Cloudflare Rulesetsはversionedであり、API経由の自動化と相性がよ�
 - Transform Rules: https://developers.cloudflare.com/rules/transform/
 - Origin Rules: https://developers.cloudflare.com/rules/origin-rules/
 - Page Rules migration: https://developers.cloudflare.com/rules/reference/page-rules-migration/
-

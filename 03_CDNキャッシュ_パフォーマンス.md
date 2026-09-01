@@ -1,3 +1,7 @@
+---
+title: 第3章 CDN・キャッシュ・パフォーマンス
+---
+
 # 第3章 CDN・Cache・パフォーマンス設計
 
 ## 1. 学習目標
@@ -443,4 +447,3 @@ CDNがあるのに毎回Origin近くまで戻り、Cache hit ratioが伸びな�
 - Argo Smart Routing: https://developers.cloudflare.com/argo-smart-routing/
 - Cloudflare Images: https://developers.cloudflare.com/images/
 - Image Transformations: https://developers.cloudflare.com/images/optimization/transformations/overview/
-

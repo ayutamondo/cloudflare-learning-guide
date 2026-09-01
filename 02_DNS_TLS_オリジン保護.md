@@ -1,3 +1,7 @@
+---
+title: 第2章 DNS・TLS・オリジン保護
+---
+
 # 第2章 DNS・TLS・Origin保護
 
 ## 1. 学習目標
@@ -384,4 +388,3 @@ TLS終端をEdgeへ置くことでユーザーに近い地点で接続を確立�
 - Full (strict): https://developers.cloudflare.com/ssl/origin-configuration/ssl-modes/full-strict/
 - Authenticated Origin Pulls: https://developers.cloudflare.com/ssl/origin-configuration/authenticated-origin-pull/
 - Cloudflare Tunnel: https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/
-

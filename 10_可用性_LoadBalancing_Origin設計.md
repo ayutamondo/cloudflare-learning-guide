@@ -1,3 +1,7 @@
+---
+title: 第10章 可用性・Load Balancing
+---
+
 # 第10章 可用性・Load Balancing・Origin設計
 
 ## 1. 学習目標
@@ -405,4 +409,3 @@ Cost/complexityに応じて:
 - Reference architecture: https://developers.cloudflare.com/reference-architecture/architectures/load-balancing/
 - Tiered Cache: https://developers.cloudflare.com/cache/how-to/tiered-cache/
 - Argo Smart Routing: https://developers.cloudflare.com/argo-smart-routing/
-
