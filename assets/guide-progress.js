@@ -1,6 +1,7 @@
 (function () {
   const STORAGE_KEY = 'cf-guide-progress';
-  const STATUS = { READ: 'check_circle', UNREAD: 'circle' };
+  const STATUS = { READ: 'check', UNREAD: 'empty' };
+  let suppressAutoProgress = false;
 
   function readProgress() {
     try {
@@ -72,6 +73,25 @@
     syncBookmarkState();
   }
 
+  function resetProgress() {
+    suppressAutoProgress = true;
+
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+    } catch (error) {
+      // localStorage may be unavailable in some private browsing modes.
+    }
+
+    applyStatusToLinks();
+    syncBookmarkState();
+
+    window.setTimeout(function () {
+      suppressAutoProgress = false;
+      applyStatusToLinks();
+      syncBookmarkState();
+    }, 0);
+  }
+
   function syncBookmarkState() {
     const bookmarkLink = document.querySelector('.bookmark-link');
     if (!bookmarkLink) {
@@ -111,6 +131,10 @@
   }
 
   function updateCurrentSectionProgress() {
+    if (suppressAutoProgress) {
+      return;
+    }
+
     const headingId = getVisibleHeading();
     setPageEntry({
       status: 'read',
@@ -130,6 +154,15 @@
         return;
       }
 
+      if (link.getAttribute('href') === '/reference/source-index.html' || link.getAttribute('href') === 'reference/source-index.html') {
+        link.classList.remove('is-read', 'is-unread');
+        const existingStatus = link.querySelector('.nav-status');
+        if (existingStatus) {
+          existingStatus.remove();
+        }
+        return;
+      }
+
       const key = normalizePathname(new URL(href, window.location.href).pathname);
       const entry = progress[key];
       const isRead = entry === 'read' || (entry && typeof entry === 'object' && entry.status === 'read');
@@ -138,7 +171,7 @@
       link.classList.toggle('is-unread', !isRead);
 
       const status = document.createElement('span');
-      status.className = 'nav-status material-symbols-rounded';
+      status.className = `nav-status material-symbols-rounded ${isRead ? 'is-read' : 'is-unread'}`;
       status.textContent = isRead ? STATUS.READ : STATUS.UNREAD;
 
       const existingStatus = link.querySelector('.nav-status');
@@ -183,7 +216,7 @@
     const resetButton = document.querySelector('.reset-link');
     if (resetButton) {
       resetButton.addEventListener('click', function () {
-        clearCurrentPageEntry();
+        resetProgress();
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
