@@ -51,7 +51,7 @@ Only authorized application
 ## 3. Cloudflare Oneの主要要素
 
 <!-- visual:start -->
-{% include archify-diagram.html src="/assets/diagrams/06_zero_trust.html" title="Zero Trustの全体構成" summary="Accessは誰が何へアクセスできるか、TunnelはOriginを外へ安全につなぐこと、Gateway/WARPは端末側の通信制御を担う。" %}
+{% include archify-diagram.html src="/assets/diagrams/06_zero_trust.html" title="Zero Trustの全体構成" steps="利用者 / 端末|Identity Provider|Cloudflare One|Access Policy|Tunnel|Private App" summary="Accessは誰が何へアクセスできるか、TunnelはOriginを外へ安全につなぐこと、Gateway/WARPは端末側の通信制御を担う。" %}
 <!-- visual:end -->
 
 ### Access
@@ -123,7 +123,7 @@ internal.example.local
 ## 6. Access Application
 
 <!-- visual:start -->
-{% include archify-diagram.html src="/assets/diagrams/06_access_auth_flow.html" title="Cloudflare Accessの認証フロー" summary="Originへ到達する前にIdP認証とPolicy評価を完了し、許可された利用者だけをPrivate Appへ通す。" %}
+{% include archify-diagram.html src="/assets/diagrams/06_access_auth_flow.html" title="Cloudflare Accessの認証フロー" steps="管理URLを開く|Access|IdPへ移動|ログイン / MFA|Policy評価|Private App" summary="Originへ到達する前にIdP認証とPolicy評価を完了し、許可された利用者だけをPrivate Appへ通す。" %}
 <!-- visual:end -->
 
 Accessはapplication単位でpolicyを適用する。

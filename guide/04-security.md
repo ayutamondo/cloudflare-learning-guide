@@ -115,7 +115,7 @@ Custom Rulesは順序評価され、Block等のterminating actionは後続評価
 ## 6. Managed Challenge
 
 <!-- visual:start -->
-{% include archify-diagram.html src="/assets/diagrams/04_security_decision.html" title="攻撃対策の選択フロー" summary="Blockを最初から強く掛けるより、ログ・Challenge・Rate Limitを使いながら誤検知と業務影響を見て強化する。" %}
+{% include archify-diagram.html src="/assets/diagrams/04_security_decision.html" title="攻撃対策の選択フロー" steps="症状を観測|大量トラフィック|攻撃パターン|DDoS / WAF|Challenge / Limit|アプリ制御" summary="Blockを最初から強く掛けるより、ログ・Challenge・Rate Limitを使いながら誤検知と業務影響を見て強化する。" %}
 <!-- visual:end -->
 
 固定CAPTCHA表示とは異なり、Cloudflareが状況に応じてchallenge方法を決める。

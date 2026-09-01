@@ -320,7 +320,7 @@ Hyperdrive read query cacheはwrite時に自動invalidateされない。read-aft
 ## 12. 選定フロー
 
 <!-- visual:start -->
-{% include archify-diagram.html src="/assets/diagrams/08_data_decision_flow.html" title="Data製品の選定フロー" summary="データ形式だけでなく、読み書き頻度・整合性・同期/非同期・既存DB接続の有無から選ぶ。" %}
+{% include archify-diagram.html src="/assets/diagrams/08_data_decision_flow.html" title="Data製品の選定フロー" steps="データ要件|大きなオブジェクト|SQLが必要|協調状態が必要|非同期処理|製品を組み合わせる" summary="データ形式だけでなく、読み書き頻度・整合性・同期/非同期・既存DB接続の有無から選ぶ。" %}
 <!-- visual:end -->
 
 ```text

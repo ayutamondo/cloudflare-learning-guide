@@ -14,7 +14,7 @@ description: Cloudflare 実務学習ガイドの対象読者、学習順、必�
 ## この教材の考え方
 
 <!-- visual:start -->
-{% include archify-diagram.html src="/assets/diagrams/00_request_lifecycle.html" title="Cloudflareでのリクエスト処理" summary="Cloudflareは製品名で暗記せず、DNS・Edge Security・Edge Logic・Data / Originという処理の層で捉える。" %}
+{% include archify-diagram.html src="/assets/diagrams/00_request_lifecycle.html" title="Cloudflareでのリクエスト処理" steps="利用者|DNS|Cloudflare Edge|Security / Rules|Cache / Workers|Origin / Data" summary="Cloudflareは製品名で暗記せず、DNS・Edge Security・Edge Logic・Data / Originという処理の層で捉える。" %}
 <!-- visual:end -->
 
 Cloudflareは製品数が多いため、製品名を暗記すると全体像を見失いやすい。実務では、1リクエストが次のように流れると理解した方が判断しやすい。

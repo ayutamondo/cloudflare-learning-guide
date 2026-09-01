@@ -23,7 +23,7 @@ title: 第3章 CDN・キャッシュ・パフォーマンス
 ## 2. Cacheの基本モデル
 
 <!-- visual:start -->
-{% include archify-diagram.html src="/assets/diagrams/03_cache_layers.html" title="Browser・Edge・Originのキャッシュ階層" summary="Browser CacheとCloudflare Edge Cacheは別レイヤー。TTL・Purge・Cache-Controlを混同しない。" %}
+{% include archify-diagram.html src="/assets/diagrams/03_cache_layers.html" title="Browser・Edge・Originのキャッシュ階層" steps="利用者|Browser Cache|Cloudflare Edge Cache|Cache Rules|Origin|Source of truth" summary="Browser CacheとCloudflare Edge Cacheは別レイヤー。TTL・Purge・Cache-Controlを混同しない。" %}
 <!-- visual:end -->
 
 キャッシュには最低でも2層ある。
@@ -112,7 +112,7 @@ Cache-Control: private, no-store
 ## 5. `CF-Cache-Status`
 
 <!-- visual:start -->
-{% include archify-diagram.html src="/assets/diagrams/03_cache_status_flow.html" title="CF-Cache-Status調査フロー" summary="設定画面だけで判断せず、実レスポンスのCF-Cache-Status・Age・Cache-Controlを観測してHIT/MISS理由を追う。" %}
+{% include archify-diagram.html src="/assets/diagrams/03_cache_status_flow.html" title="CF-Cache-Status調査フロー" steps="リクエスト|ヘッダーを確認|HIT / Age|MISS / DYNAMIC|適格性を確認|TTL・Ruleを調整" summary="設定画面だけで判断せず、実レスポンスのCF-Cache-Status・Age・Cache-Controlを観測してHIT/MISS理由を追う。" %}
 <!-- visual:end -->
 
 調査で最初に見るCloudflareヘッダーの一つ。

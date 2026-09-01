@@ -25,7 +25,7 @@ WorkersはStatic AssetsをWorker codeと一体でdeployできる。
 ## 2. 2026年の重要な方針: 新規はWorkers中心
 
 <!-- visual:start -->
-{% include archify-diagram.html src="/assets/diagrams/09_fullstack.html" title="Workers中心のFull-stack構成" summary="Static AssetsとAPIを同じWorkerプロジェクトへ統合できるが、静的ファイルは静的のまま返す設計が基本。" %}
+{% include archify-diagram.html src="/assets/diagrams/09_fullstack.html" title="Workers中心のFull-stack構成" steps="Browser|Static Assets|Asset-first|Worker API|D1 / R2 / KV|External backend" summary="Static AssetsとAPIを同じWorkerプロジェクトへ統合できるが、静的ファイルは静的のまま返す設計が基本。" %}
 <!-- visual:end -->
 
 Cloudflare Pagesは現在も利用可能だが、公式Pagesドキュメントは**新規projectではWorkersを開始点にすることを推奨**している。
@@ -296,7 +296,7 @@ Framework builtin image optimizerとCloudflare Imagesの責務を整理する。
 
 ### Small SaaS
 
-{% include archify-diagram.html src="/assets/diagrams/09_small_saas.html" title="Small SaaSのデータ経路" summary="利用者への応答と非同期処理を分け、データの責務を明確にする。" %}
+{% include archify-diagram.html src="/assets/diagrams/09_small_saas.html" title="Small SaaSのデータ経路" steps="Browser|Workers + Assets|Worker API|D1|R2|Queues / Webhook" summary="利用者への応答と非同期処理を分け、データの責務を明確にする。" %}
 
 ### Content site
 

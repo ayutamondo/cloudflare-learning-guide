@@ -151,7 +151,7 @@ DSレコードがRegistrarに残ったまま署名側を変えるとSERVFAILの�
 # 6. TLSの二重構造
 
 <!-- visual:start -->
-{% include archify-diagram.html src="/assets/diagrams/02_dns_tls_origin.html" title="TLSの二つの接続" summary="Client↔CloudflareとCloudflare↔Originは別々のTLS接続。証明書・暗号化モード・エラーを区間ごとに切り分ける。" %}
+{% include archify-diagram.html src="/assets/diagrams/02_dns_tls_origin.html" title="TLSの二つの接続" steps="利用者|Edge証明書|Cloudflare Edge|Origin証明書|Origin|Firewall / Tunnel" summary="Client↔CloudflareとCloudflare↔Originは別々のTLS接続。証明書・暗号化モード・エラーを区間ごとに切り分ける。" %}
 <!-- visual:end -->
 
 Cloudflare Proxy利用時のHTTPSは二つの区間に分かれる。
