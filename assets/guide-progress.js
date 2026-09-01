@@ -43,7 +43,7 @@
       return {
         status: entry.status || 'read',
         lastHeadingId: entry.lastHeadingId || '',
-        scrollY: Number(entry.scrollY) || 0
+        scrollY: Number(entry.scrollY) || 0,
       };
     }
 
@@ -57,8 +57,10 @@
 
     progress[pageKey] = {
       status: updates.status || current.status || 'read',
-      lastHeadingId: updates.lastHeadingId !== undefined ? updates.lastHeadingId : current.lastHeadingId || '',
-      scrollY: updates.scrollY !== undefined ? Number(updates.scrollY) : Number(current.scrollY) || 0
+      lastHeadingId:
+        updates.lastHeadingId !== undefined ? updates.lastHeadingId : current.lastHeadingId || '',
+      scrollY:
+        updates.scrollY !== undefined ? Number(updates.scrollY) : Number(current.scrollY) || 0,
     };
 
     writeProgress(progress);
@@ -113,7 +115,7 @@
     setPageEntry({
       status: 'read',
       lastHeadingId: headingId,
-      scrollY: Math.max(window.scrollY, 0)
+      scrollY: Math.max(window.scrollY, 0),
     });
   }
 
@@ -129,13 +131,23 @@
 
       const normalizedPath = normalizePathname(new URL(href, window.location.href).pathname);
       const hrefValue = href.toLowerCase();
-      const excludedPaths = ['/', '/guide/getting-started', '/reference/source-index', '/index', '/guide/getting-started.html', '/reference/source-index.html', '/guide/getting-started/', '/reference/source-index/'];
-      const isExcludedPage = excludedPaths.includes(normalizedPath)
-        || hrefValue.includes('index.html')
-        || hrefValue.includes('getting-started.html')
-        || hrefValue.includes('source-index.html')
-        || hrefValue.includes('/guide/getting-started')
-        || hrefValue.includes('/reference/source-index');
+      const excludedPaths = [
+        '/',
+        '/guide/getting-started',
+        '/reference/source-index',
+        '/index',
+        '/guide/getting-started.html',
+        '/reference/source-index.html',
+        '/guide/getting-started/',
+        '/reference/source-index/',
+      ];
+      const isExcludedPage =
+        excludedPaths.includes(normalizedPath) ||
+        hrefValue.includes('index.html') ||
+        hrefValue.includes('getting-started.html') ||
+        hrefValue.includes('source-index.html') ||
+        hrefValue.includes('/guide/getting-started') ||
+        hrefValue.includes('/reference/source-index');
       if (isExcludedPage) {
         link.classList.remove('is-read', 'is-unread');
         const existingStatus = link.querySelector('.nav-status');
@@ -147,7 +159,8 @@
 
       const key = normalizedPath;
       const entry = progress[key];
-      const isRead = entry === 'read' || (entry && typeof entry === 'object' && entry.status === 'read');
+      const isRead =
+        entry === 'read' || (entry && typeof entry === 'object' && entry.status === 'read');
 
       link.classList.toggle('is-read', isRead);
       link.classList.toggle('is-unread', !isRead);
@@ -179,7 +192,7 @@
     setPageEntry({
       status: 'read',
       lastHeadingId: getVisibleHeading(),
-      scrollY: Math.max(window.scrollY, 0)
+      scrollY: Math.max(window.scrollY, 0),
     });
     applyStatusToLinks();
     bindControls();
