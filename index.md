@@ -17,7 +17,6 @@ title: Cloudflare 実務学習ガイド
     <img src="assets/images/hero-network-poster.png" alt="藍色の建築的な面と朱色の線で、ネットワークの境界と通信経路を抽象的に表現したビジュアル">
     <figcaption>境界を設計し、速く、安全に届ける。</figcaption>
   </figure>
-  </div>
 </section>
 
 <section class="manifesto">
