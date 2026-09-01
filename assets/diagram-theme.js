@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   await Promise.all(images.map(async (image) => {
     try {
-      const response = await fetch(image.src);
+      const response = await fetch(image.src, { cache: "no-store" });
       if (!response.ok) return;
 
       const documentSvg = new DOMParser().parseFromString(await response.text(), "image/svg+xml");
