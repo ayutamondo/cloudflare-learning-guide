@@ -63,7 +63,7 @@ Cloudflare Edgeは単なる中継ではない。ここで次のような処理�
 ## 3. 権威DNSとしてのCloudflare
 
 <!-- visual:start -->
-![ProxiedとDNS onlyの違い](assets/diagrams/01_proxy_modes.svg)
+![ProxiedとDNS onlyの通信経路の違いを、二段のフローとして示したビジュアル](assets/images/figures/proxy-modes.png)
 
 > **図の要点:** DNSレコードが存在するだけではCloudflareの保護機能は働かない。ProxiedかDNS onlyかで、通信経路そのものが変わる。
 <!-- visual:end -->
