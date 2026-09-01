@@ -1,6 +1,6 @@
 (function () {
   const STORAGE_KEY = 'cf-guide-progress';
-  const STATUS = { READ: '既読', UNREAD: '未読' };
+  const STATUS = { READ: 'check_circle', UNREAD: 'circle' };
 
   function readProgress() {
     try {
@@ -121,7 +121,7 @@
       link.classList.toggle('is-unread', !isRead);
 
       const status = document.createElement('span');
-      status.className = 'nav-status';
+      status.className = 'nav-status material-symbols-rounded';
       status.textContent = isRead ? STATUS.READ : STATUS.UNREAD;
 
       const existingStatus = link.querySelector('.nav-status');
@@ -159,6 +159,14 @@
     if (bookmarkLink) {
       bookmarkLink.addEventListener('click', function (event) {
         event.preventDefault();
+        const state = getPageEntry(getCurrentPageKey());
+        const hasSavedSection = !!state.lastHeadingId || Number(state.scrollY) > 0;
+
+        if (hasSavedSection) {
+          bookmarkLink.classList.add('is-active');
+          bookmarkLink.classList.remove('is-inactive');
+        }
+
         jumpToSavedSection();
       });
     }
@@ -167,8 +175,19 @@
     if (resetButton) {
       resetButton.addEventListener('click', function () {
         clearCurrentPageEntry();
+        if (bookmarkLink) {
+          bookmarkLink.classList.remove('is-active');
+          bookmarkLink.classList.add('is-inactive');
+        }
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
+    }
+
+    if (bookmarkLink) {
+      const state = getPageEntry(getCurrentPageKey());
+      const hasSavedSection = !!state.lastHeadingId || Number(state.scrollY) > 0;
+      bookmarkLink.classList.toggle('is-active', hasSavedSection);
+      bookmarkLink.classList.toggle('is-inactive', !hasSavedSection);
     }
   }
 
