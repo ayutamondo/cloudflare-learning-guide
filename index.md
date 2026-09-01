@@ -5,29 +5,29 @@ title: Cloudflare 実務学習ガイド
 
 <section class="home-hero">
   <div class="home-hero__copy">
-    <p class="eyebrow">A PRACTICAL FIELD GUIDE / 2026</p>
-    <h1>Cloudflare<br><em>実務</em> 学習ガイド</h1>
+    <p class="eyebrow">実務のための Cloudflare 学習ガイド</p>
+    <h1>Cloudflareを、<br>設定から<strong>設計</strong>へ。</h1>
     <p class="home-lead">DNS、セキュリティ、CDN、Workers、データ基盤まで。<br>プロダクト名の暗記ではなく、<strong>設計の判断</strong>を身につけるための13章。</p>
     <div class="hero-actions">
       <a class="button button--primary" href="guide/getting-started.html">学習をはじめる <span>→</span></a>
       <a class="text-action" href="#chapters">章一覧を見る ↓</a>
     </div>
   </div>
-  <div class="home-hero__visual" aria-label="Cloudflareを通るリクエストの流れ">
-    <p>01 / REQUEST LIFECYCLE</p>
-    <img src="assets/diagrams/00_request_lifecycle.png" alt="クライアントのリクエストがDNS、Cloudflare Edge、オリジンを通る流れ">
-    <span class="visual-stamp">EDGE<br>FIRST</span>
+  <figure class="home-hero__visual">
+    <img src="assets/images/hero-network-poster.png" alt="藍色の建築的な面と朱色の線で、ネットワークの境界と通信経路を抽象的に表現したビジュアル">
+    <figcaption>境界を設計し、速く、安全に届ける。</figcaption>
+  </figure>
   </div>
 </section>
 
 <section class="manifesto">
-  <p class="eyebrow">THE APPROACH</p>
+  <p class="eyebrow">このガイドの考え方</p>
   <p>Cloudflareを「設定画面の集合」としてではなく、<br>一つのリクエストが通る<strong>システム全体</strong>として捉える。</p>
 </section>
 
 <section class="guide-intro">
   <div>
-    <p class="eyebrow">HOW TO USE THIS GUIDE</p>
+    <p class="eyebrow">学び方</p>
     <h2>読む。試す。<br>確認する。</h2>
   </div>
   <div class="guide-intro__body">
@@ -38,7 +38,7 @@ title: Cloudflare 実務学習ガイド
 
 <section id="chapters" class="chapter-section">
   <div class="section-heading">
-    <p class="eyebrow">THE 13 CHAPTERS</p>
+    <p class="eyebrow">全13章</p>
     <h2>基礎から、<br>本番設計まで。</h2>
   </div>
   <div class="chapter-grid">
@@ -59,7 +59,7 @@ title: Cloudflare 実務学習ガイド
 </section>
 
 <section class="home-closing">
-  <p class="eyebrow">NO GUESSWORK</p>
+  <p class="eyebrow">公式情報を起点にする</p>
   <h2>現場で使う前に、<br>自分で確かめる。</h2>
   <p>本ガイドの製品仕様や設計判断は、Cloudflare公式ドキュメントを起点にしています。</p>
   <a class="button button--inverse" href="reference/source-index.html">公式ソース索引を開く <span>→</span></a>
