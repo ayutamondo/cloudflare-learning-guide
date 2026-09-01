@@ -15,7 +15,6 @@ Cloudflareを前段へ入れても、Originが1台で壊れればCache MISSやdy
 ## 2. Availabilityは層ごとに考える
 
 <!-- visual:start -->
-{% include archify-diagram.html src="/assets/diagrams/10_availability.html" title="CloudflareとOriginを含む可用性設計" steps="利用者|Cloudflare Edge|Load Balancer|Health monitor|Origin A|Origin B" summary="Edgeが高可用でもOriginが単一障害点ならサービスは落ちる。Health Check・Traffic Steering・データ層まで一体で設計する。" %}
 <!-- visual:end -->
 
 ```text
@@ -82,7 +81,6 @@ Cloudflare Load Balancingは主に:
 
 で構成される。
 
-{% include archify-diagram.html src="/assets/diagrams/10_lb_pools.html" title="Load BalancerのPool構成" steps="Load Balancer|Pool Tokyo|Endpoint A1|Endpoint A2|Pool Osaka|Endpoint B1 / B2" summary="PoolとEndpointを分け、監視結果で正常な接続先へ誘導する。" %}
 
 ---
 

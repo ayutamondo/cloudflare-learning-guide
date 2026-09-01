@@ -28,7 +28,6 @@ Observability        logs/traces
 ## 2. Architecture
 
 <!-- visual:start -->
-{% include archify-diagram.html src="/assets/diagrams/13_reference_architecture.html" title="総合ハンズオンの完成アーキテクチャ" steps="User|Cloudflare Edge|WAF / Rate Limit|Worker + Assets|D1 / R2 / Queue|API / Origin" summary="DNS/TLS、WAF/Cache、Workers、D1/R2/Queueまでを1つの小規模Webサービスとして接続する。" %}
 <!-- visual:end -->
 
 ---
@@ -36,7 +35,6 @@ Observability        logs/traces
 ## 3. Phase 0: Repository
 
 <!-- visual:start -->
-{% include archify-diagram.html src="/assets/diagrams/13_hands_on_phases.html" title="構築フェーズの順序" steps="Foundation|App|Data|Security|Operations|確認・Rollback" summary="Foundation → App → Data → Security → Operationsの順で積み上げ、各段階で確認・Rollbackできる状態を維持する。" %}
 <!-- visual:end -->
 
 例:

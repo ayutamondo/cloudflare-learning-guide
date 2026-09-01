@@ -24,7 +24,6 @@ title: 第1章 全体アーキテクチャ
 ## 2. Cloudflareは「通信経路の中間層」である
 
 <!-- visual:start -->
-{% include archify-diagram.html src="/assets/diagrams/01_cloudflare_architecture.html" title="Cloudflare全体アーキテクチャ" steps="利用者|Cloudflare DNS|Cloudflare Edge|WAF / Cache / Workers|Origin|アプリのData" summary="Proxied DNSではCloudflare EdgeがReverse Proxyとして通信経路に入り、Security・Cache・Workersなどの処理点になる。" %}
 <!-- visual:end -->
 
 典型的なWeb構成は次の通り。
@@ -110,7 +109,6 @@ Anycastによって得られる主な効果は次の通り。
 
 リバースプロキシはユーザーとOriginの間に入り、Originの代わりに接続を受ける。
 
-{% include archify-diagram.html src="/assets/diagrams/01_request_cache_sequence.html" title="Cache HITとMISSのリクエスト経路" steps="利用者|Cloudflare Edge|TLS / WAF / Rules|Cacheを確認|Origin|レスポンス" summary="Cache HITならCloudflare Edgeが応答し、MISSならOriginへ問い合わせてから応答する。" %}
 
 ### 重要: TLS接続は2区間
 

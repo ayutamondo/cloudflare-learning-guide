@@ -15,7 +15,6 @@ Workersを「AWS LambdaのCloudflare版」とだけ捉えると設計を誤る�
 ## 2. Workersの実行モデル
 
 <!-- visual:start -->
-{% include archify-diagram.html src="/assets/diagrams/07_workers_runtime.html" title="Workers RuntimeとBindings" steps="リクエスト|Worker Isolate|fetch handler|env bindings|Cloudflare Data|Origin / API" summary="Workerは常駐サーバーではなく、Isolate上でリクエストを処理し、状態はBindingsや外部サービスへ置く。" %}
 <!-- visual:end -->
 
 WorkersはV8 Isolateを基盤とする。
@@ -105,7 +104,6 @@ Node.js compatibilityも拡張されているが、すべてを「普通のNode 
 ## 5. C3とWrangler
 
 <!-- visual:start -->
-{% include archify-diagram.html src="/assets/diagrams/07_wrangler_cycle.html" title="Wranglerを中心にした開発サイクル" steps="コードと設定|wrangler dev|ローカル確認|wrangler deploy|本番 / Route|Logsで観測" summary="ローカル開発・Deploy・LogsまでCLIで再現可能にし、Dashboard上の手作業を減らすとチーム運用しやすい。" %}
 <!-- visual:end -->
 
 2026年時点の公式getting startedはC3を使う。

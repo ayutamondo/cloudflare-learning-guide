@@ -110,16 +110,6 @@ img { max-width: 100%; height: auto; }
 .content th { background: #d8dfdc; }
 .content hr { border: 0; border-top: 1px solid var(--line); margin: 3rem 0; }
 .content > img { display: block; margin: 2rem 0; border: 1px solid var(--line); }
-.content > .guide-diagram { max-width: 58rem; }
-.guide-diagram { width: min(100%, 58rem); margin: 2.5rem 0; padding: clamp(.85rem, 2.4vw, 1.35rem); border: 1px solid #88969a; background: #dce3e1; }
-.guide-diagram__steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; margin: 0; padding: 0; list-style: none; counter-reset: diagram-step; }
-.guide-diagram__steps li { display: grid; grid-template-columns: 2rem minmax(0, 1fr); align-items: center; gap: .7rem; min-height: 5.4rem; padding: .9rem; border: 1px solid #52646a; background: #fff; color: var(--ink); line-height: 1.45; }
-.guide-diagram__number { display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--indigo); color: #fff; font-family: Arial, sans-serif; font-size: .85rem; font-weight: 700; }
-.guide-diagram__steps li:nth-child(3n + 2) .guide-diagram__number { background: var(--vermilion); }
-.guide-diagram__steps li:nth-child(3n) .guide-diagram__number { background: var(--night); }
-.guide-diagram__steps strong { font-size: 1rem; letter-spacing: .01em; }
-.guide-diagram figcaption { margin: 1rem .15rem 0; color: var(--ink-muted); font-size: .95rem; line-height: 1.75; }
-.guide-diagram__link { margin: .55rem .15rem 0; font-size: .9rem; }
 .site-footer { display: flex; justify-content: space-between; gap: 2rem; padding: 1.25rem clamp(1rem, 3vw, 3rem); border-top: 1px solid #3d3f43; background: var(--night); color: #d4d2cb; font-size: .72rem; }
 .site-footer p { margin: 0; }
 .site-footer a { color: #fff; }
@@ -161,13 +151,6 @@ img { max-width: 100%; height: auto; }
   .content h1 { font-size: 2.15rem; }
   .content h2 { margin-top: 3.5rem; }
   .content p, .content li { font-size: .97rem; line-height: 2; }
-  .guide-diagram { margin: 2rem 0; padding: .8rem; }
-  .guide-diagram__steps { grid-template-columns: 1fr; gap: .55rem; }
-  .guide-diagram__steps li { min-height: 4.7rem; padding: .75rem; }
-  .guide-diagram__steps strong { font-size: 1rem; }
-  .guide-diagram figcaption { margin: .8rem .1rem 0; font-size: .95rem; }
-  .guide-diagram__link { margin: .7rem .1rem .1rem; }
-  .guide-diagram__link a { display: inline-block; padding: .6rem .8rem; border: 1px solid var(--indigo); background: #fff; }
   .site-footer { display: block; line-height: 1.9; }
   .site-footer p { margin-bottom: .35rem; }
 }
