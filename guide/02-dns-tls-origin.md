@@ -151,6 +151,21 @@ DSレコードがRegistrarに残ったまま署名側を変えるとSERVFAILの�
 # 6. TLSの二重構造
 
 <!-- visual:start -->
+<figure class="decision-map">
+  <div class="decision-map__branches">
+    <section class="decision-map__branch">
+      <h3>TLS A: 利用者 → Cloudflare</h3>
+      <ol class="decision-map__path"><li>Browser</li><li>Cloudflare Edge</li></ol>
+      <p>利用者はEdge証明書を検証する。鍵アイコンはこの区間の成立を主に示す。</p>
+    </section>
+    <section class="decision-map__branch">
+      <h3>TLS B: Cloudflare → Origin</h3>
+      <ol class="decision-map__path"><li>Cloudflare Edge</li><li>Origin</li></ol>
+      <p><strong>Full (strict)</strong>では、Origin証明書の有効性とhostname一致まで検証する。</p>
+    </section>
+  </div>
+  <figcaption>この図で判断すること: BrowserでHTTPSが見えてもOrigin区間は別に守る。Full (strict)とOrigin直アクセス制限を組み合わせる。</figcaption>
+</figure>
 <!-- visual:end -->
 
 Cloudflare Proxy利用時のHTTPSは二つの区間に分かれる。

@@ -110,6 +110,18 @@ img { max-width: 100%; height: auto; }
 .content th { background: #d8dfdc; }
 .content hr { border: 0; border-top: 1px solid var(--line); margin: 3rem 0; }
 .content > img { display: block; margin: 2rem 0; border: 1px solid var(--line); }
+.decision-map { max-width: 58rem; margin: 2.5rem 0; padding: 1.2rem; border: 1px solid #88969a; background: #dce3e1; }
+.decision-map figcaption { margin-top: 1rem; color: var(--ink-muted); font-size: .92rem; }
+.decision-map__branches { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.decision-map__branch { padding: 1rem; border: 1px solid var(--indigo); background: #fff; }
+.decision-map__branch--risk { border-color: var(--vermilion); }
+.decision-map h3 { margin: 0 0 .7rem; font-size: 1.1rem; }
+.decision-map p { margin: .55rem 0; font-size: 1rem; line-height: 1.65; }
+.decision-map__path { display: grid; gap: .45rem; margin: .8rem 0; padding: 0; list-style: none; }
+.decision-map__path li { padding: .55rem .7rem; border-left: 4px solid var(--indigo); background: #edf0ed; font-size: 1rem; font-weight: 700; }
+.decision-map__path li + li::before { display: block; margin: -.95rem 0 .35rem; color: var(--indigo); content: "↓"; }
+.decision-map__branch--risk .decision-map__path li { border-left-color: var(--vermilion); background: #f6e8e4; }
+.decision-map__branch--risk .decision-map__path li + li::before { color: var(--vermilion); }
 .site-footer { display: flex; justify-content: space-between; gap: 2rem; padding: 1.25rem clamp(1rem, 3vw, 3rem); border-top: 1px solid #3d3f43; background: var(--night); color: #d4d2cb; font-size: .72rem; }
 .site-footer p { margin: 0; }
 .site-footer a { color: #fff; }
@@ -151,6 +163,8 @@ img { max-width: 100%; height: auto; }
   .content h1 { font-size: 2.15rem; }
   .content h2 { margin-top: 3.5rem; }
   .content p, .content li { font-size: .97rem; line-height: 2; }
+  .decision-map { margin: 2rem 0; padding: .85rem; }
+  .decision-map__branches { grid-template-columns: 1fr; }
   .site-footer { display: block; line-height: 1.9; }
   .site-footer p { margin-bottom: .35rem; }
 }

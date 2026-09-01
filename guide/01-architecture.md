@@ -24,6 +24,21 @@ title: 第1章 全体アーキテクチャ
 ## 2. Cloudflareは「通信経路の中間層」である
 
 <!-- visual:start -->
+<figure class="decision-map">
+  <div class="decision-map__branches">
+    <section class="decision-map__branch">
+      <h3>Proxied: Cloudflareが通信経路に入る</h3>
+      <ol class="decision-map__path"><li>利用者</li><li>Cloudflare Edge</li><li>Origin</li></ol>
+      <p>WAF・Cache・Workers・TLS終端をこの経路で適用できる。</p>
+    </section>
+    <section class="decision-map__branch decision-map__branch--risk">
+      <h3>DNS only: 名前解決だけを行う</h3>
+      <ol class="decision-map__path"><li>利用者</li><li>Origin</li></ol>
+      <p>Web通信はCloudflareを通らない。WAF・Cache・Workersは適用されない。</p>
+    </section>
+  </div>
+  <figcaption>この図で判断すること: 公開WebホストでCloudflareの保護・最適化を使うならProxiedにする。メールやProxy非対応プロトコルはDNS onlyにする。</figcaption>
+</figure>
 <!-- visual:end -->
 
 典型的なWeb構成は次の通り。

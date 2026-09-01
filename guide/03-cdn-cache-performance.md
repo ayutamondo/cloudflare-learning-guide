@@ -23,6 +23,21 @@ title: 第3章 CDN・キャッシュ・パフォーマンス
 ## 2. Cacheの基本モデル
 
 <!-- visual:start -->
+<figure class="decision-map">
+  <div class="decision-map__branches">
+    <section class="decision-map__branch">
+      <h3>Cache HIT</h3>
+      <ol class="decision-map__path"><li>Request</li><li>Cloudflare Edge Cache</li><li>Response</li></ol>
+      <p>Originへ行かない。<code>CF-Cache-Status: HIT</code> と <code>Age</code> を確認する。</p>
+    </section>
+    <section class="decision-map__branch decision-map__branch--risk">
+      <h3>Cache MISS / BYPASS</h3>
+      <ol class="decision-map__path"><li>Request</li><li>Cache適格性を確認</li><li>Origin</li></ol>
+      <p>Cache-Control、Cookie、Cache Rule、Cache Keyのどれが原因かを調べる。</p>
+    </section>
+  </div>
+  <figcaption>この図で判断すること: HIT/MISSという結果だけで終わらせず、ヘッダーから次に確認する設定・条件を決める。</figcaption>
+</figure>
 <!-- visual:end -->
 
 キャッシュには最低でも2層ある。
